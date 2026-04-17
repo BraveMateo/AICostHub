@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-3911589843029291">
     <title>AI Cost Estimator 2026 | AICostHub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -363,31 +362,159 @@
             text-transform: uppercase;
         }
 
-        /* ── ARTICLE ── */
-        .article-section {
-            max-width: 1080px;
+        /* ── GUIDE SECTION ── */
+        .guide-section {
+            max-width: 860px;
             margin: 0 auto;
-            padding: 0 24px 64px;
+            padding: 64px 24px 72px;
             border-top: 1px solid var(--border);
-            padding-top: 48px;
         }
-        .article-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-        .article-card h3 {
-            font-size: 16px;
+        .guide-section .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 10px;
+        }
+        .guide-section h2 {
+            font-size: clamp(22px, 3vw, 34px);
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+        .guide-section .guide-intro {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 48px;
+            max-width: 680px;
+        }
+        .guide-block { margin-bottom: 44px; }
+        .guide-block h3 {
+            font-size: 18px;
             font-weight: 700;
             letter-spacing: -0.3px;
             color: var(--text);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .article-card p { color: var(--muted); font-size: 13px; line-height: 1.75; }
+        .guide-block h3 .num {
+            width: 28px; height: 28px;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.25);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent2);
+            flex-shrink: 0;
+        }
+        .guide-block p { color: var(--muted); font-size: 14px; line-height: 1.85; margin-bottom: 12px; }
+        .guide-block p:last-child { margin-bottom: 0; }
+        .guide-block strong { color: var(--text); font-weight: 600; }
+        .guide-callout {
+            background: var(--surface);
+            border: 1px solid var(--border2);
+            border-left: 3px solid var(--accent);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+        .guide-callout strong { color: var(--accent2); }
+        .guide-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 44px 0;
+        }
+        .articles-cta {
+            background: var(--surface);
+            border: 1px solid var(--border2);
+            border-radius: 14px;
+            padding: 28px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .articles-cta div h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .articles-cta div p { font-size: 13px; color: var(--muted); }
+        .cta-link {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            letter-spacing: 0.02em;
+        }
+        .cta-link:hover { background: #2563EB; }
 
         /* ── FOOTER ── */
         footer {
-            text-align: center;
-            padding: 28px;
             border-top: 1px solid var(--border);
-            color: rgba(255,255,255,0.2);
+            padding: 48px 32px 36px;
+        }
+        .footer-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            gap: 48px;
+            align-items: start;
+            margin-bottom: 36px;
+        }
+        .footer-brand .logo {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        .footer-brand p { font-size: 12px; color: var(--muted); line-height: 1.65; max-width: 220px; }
+        .footer-col h5 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--text); }
+        .footer-bottom {
+            max-width: 1080px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-size: 12px;
+            color: rgba(255,255,255,0.2);
         }
 
         @media (max-width: 768px) {
@@ -395,8 +522,6 @@
             .article-grid { grid-template-columns: 1fr; }
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3911589843029291"
-     crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -404,6 +529,7 @@
         <div class="logo"><span class="logo-dot"></span> AICostHub</div>
         <div style="display:flex; gap:4px;">
             <a href="index.html" class="active">Calculator</a>
+            <a href="articles.html">Articles</a>
             <a href="about.html">About</a>
         </div>
     </nav>
@@ -467,20 +593,88 @@
         </div>
     </main>
 
-    <div class="article-section">
-        <div class="article-grid">
-            <div class="article-card">
-                <h3>The Rise of AI Economic Arbitrage</h3>
-                <p>As we navigate 2026, the gap between human labor costs and AI processing fees has reached a historic divergence point. While specialized human talent remains irreplaceable for high-level strategy, the unit cost of content production, data classification, and customer interactions has dropped by over 99.9% through Large Language Models.</p>
+    <!-- Guide Section -->
+    <div class="guide-section">
+        <div class="section-label">Resource Guide</div>
+        <h2>The 2026 Guide to AI API Pricing</h2>
+        <p class="guide-intro">Whether you're a solo developer building your first LLM-powered app or an enterprise architect managing multi-million token workloads, understanding how AI providers charge for their services is essential to keeping your budget under control. This guide breaks down the core concepts behind token pricing so you can make smarter, more cost-effective decisions.</p>
+
+        <div class="guide-block">
+            <h3><span class="num">1</span> What Is a Token?</h3>
+            <p>Every AI language model processes text by breaking it into small chunks called <strong>tokens</strong>. A token is not exactly a word — it's closer to a syllable or a common character sequence. On average, one token represents roughly <strong>0.75 words</strong>, or conversely, 100 words translates to approximately 133 tokens. This is why our calculator uses a 1.333 token-to-word ratio as its baseline.</p>
+            <p>Why does this matter? Because every single API provider — OpenAI, Anthropic, Google, DeepSeek — charges you per million tokens processed, not per word or per request. If you're sending a 500-word prompt to a model and receiving a 300-word response, you're actually consuming around 1,065 tokens in that single exchange. Multiply that by tens of thousands of monthly requests and the numbers grow fast.</p>
+            <div class="guide-callout">
+                <strong>Rule of thumb:</strong> When budgeting for an LLM integration, always convert your expected word counts to tokens first. Multiply your total words by 1.33 to get a conservative token estimate, then price against your chosen model's per-million-token rate.
             </div>
-            <div class="article-card">
-                <h3>Why Batch Processing is the New Standard</h3>
-                <p>With the introduction of models like GPT-5.4 and Claude 4.6, API providers have shifted toward a two-tiered latency pricing model. By utilizing Batch Processing — where tasks are handled within a 24-hour window — enterprises are reducing their burn rates by 50% or more, driving a new wave of asynchronous AI applications.</p>
+        </div>
+
+        <hr class="guide-divider">
+
+        <div class="guide-block">
+            <h3><span class="num">2</span> Input Tokens vs. Output Tokens</h3>
+            <p>AI providers split their pricing into two distinct categories: <strong>input tokens</strong> (what you send to the model) and <strong>output tokens</strong> (what the model generates back). These are almost always priced differently, and output tokens are typically <strong>3 to 5 times more expensive</strong> than input tokens.</p>
+            <p>For example, as of mid-2026, Claude 4.6 Sonnet charges $3.00 per million input tokens and $15.00 per million output tokens. GPT-5.4 is priced at $2.50 in and $15.00 out. This asymmetry exists because generating new text requires significantly more compute than reading and processing existing text.</p>
+            <p>The practical implication: if your application is <em>output-heavy</em> — for example, generating full articles, detailed reports, or lengthy code completions — your costs will be dominated by output pricing. Conversely, applications that use long system prompts and context windows but expect short responses (like classification or extraction tasks) will be more sensitive to input pricing.</p>
+            <div class="guide-callout">
+                <strong>Optimization tip:</strong> Reduce output token consumption by asking models to be concise, using structured output formats like JSON (which is token-dense), and avoiding open-ended generation prompts where brevity is acceptable.
             </div>
+        </div>
+
+        <hr class="guide-divider">
+
+        <div class="guide-block">
+            <h3><span class="num">3</span> Why Batch Processing Saves You 50%</h3>
+            <p>Both OpenAI and Anthropic introduced <strong>Batch Processing APIs</strong> that offer a flat 50% discount on all token costs — for both input and output. The trade-off is latency: instead of receiving a response within milliseconds, your requests are queued and processed within a 24-hour window.</p>
+            <p>This is a game-changer for any workload that doesn't need real-time results. Think: nightly data enrichment pipelines, bulk document summarization, weekly content generation, large-scale classification jobs, or dataset labeling for model training. If your workflow can tolerate overnight processing, switching to Batch mode is the single highest-impact cost optimization you can make — instantly halving your monthly AI spend with zero changes to your prompts or model choice.</p>
+            <p>In 2026, many forward-thinking startups are architecting their entire backend with a "batch-first" philosophy: real-time API calls are reserved only for user-facing features that require immediate responses, while all background tasks are offloaded to batch queues running during off-peak hours on high-density GPU clusters.</p>
+            <div class="guide-callout">
+                <strong>When to use Batch:</strong> Content pipelines · SEO generation · Report creation · Email drafting · Data extraction · Sentiment analysis · Embedding generation · Any non-interactive workflow with a tolerance for delay.
+            </div>
+        </div>
+
+        <hr class="guide-divider">
+
+        <div class="guide-block">
+            <h3><span class="num">4</span> Choosing the Right Model for Your Budget</h3>
+            <p>Not every task needs the most capable — or most expensive — model. The 2026 AI market has stratified into clear tiers. Frontier reasoning models like <strong>GPT-5.4</strong> and <strong>Claude 4.6 Sonnet</strong> are best suited for complex analysis, multi-step reasoning, and high-stakes generation. Mid-tier models like <strong>Gemini 3.1 Pro</strong> offer an excellent balance of quality and cost. Lightweight models like <strong>GPT-5 Nano</strong> are optimized for speed and cost efficiency at scale, handling straightforward tasks like classification or simple Q&A at a fraction of the price.</p>
+            <p>At the extreme low end, <strong>DeepSeek V4</strong> has disrupted the market with input and output pricing as low as $0.28 per million tokens — making it the go-to option for high-volume, cost-sensitive workloads where maximum intelligence isn't required. Use the calculator above to model how different model selections impact your monthly budget across your actual request volumes.</p>
+        </div>
+
+        <div class="articles-cta">
+            <div>
+                <h4>Want deeper dives?</h4>
+                <p>Read our full articles on slashing OpenAI bills with Batch API and GPT-5 vs Gemini cost comparisons.</p>
+            </div>
+            <a href="articles.html" class="cta-link">Browse Articles →</a>
         </div>
     </div>
 
-    <footer>&copy; 2026 AICostHub Analysis Tool &nbsp;·&nbsp; For informational purposes only</footer>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><span class="logo-dot"></span> AICostHub</a>
+                <p>Transparent AI cost analysis for developers, founders, and enterprise teams.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Tools</h5>
+                <a href="index.html">Cost Calculator</a>
+                <a href="articles.html">Articles</a>
+            </div>
+            <div class="footer-col">
+                <h5>Company</h5>
+                <a href="about.html">About the Project</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h5>Legal</h5>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 AICostHub Analysis Tool</span>
+            <span>For informational purposes only</span>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 </body>

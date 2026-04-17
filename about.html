@@ -67,7 +67,41 @@
         nav a:hover { color: var(--text); background: var(--surface2); }
         nav a.active { color: var(--accent2); background: var(--surface2); }
 
-        /* Page Header */
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 48px 32px 36px;
+        }
+        .footer-inner {
+            max-width: 780px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 36px;
+        }
+        .footer-brand .logo-f {
+            font-size: 16px; font-weight: 700; color: var(--text);
+            display: flex; align-items: center; gap: 8px;
+            margin-bottom: 10px; text-decoration: none;
+        }
+        .footer-brand p { font-size: 12px; color: var(--muted); max-width: 200px; line-height: 1.65; }
+        .footer-col h5 {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+        }
+        .footer-col a {
+            display: block; color: rgba(255,255,255,0.45); text-decoration: none;
+            font-size: 13px; margin-bottom: 10px; transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--text); }
+        .footer-bottom {
+            max-width: 780px; margin: 0 auto;
+            border-top: 1px solid var(--border); padding-top: 24px;
+            display: flex; justify-content: space-between;
+            font-size: 12px; color: rgba(255,255,255,0.2);
+        }
         .page-header {
             border-bottom: 1px solid var(--border);
             padding: 56px 32px 48px;
@@ -268,6 +302,7 @@
         <div class="logo"><span class="logo-dot"></span> AICostHub</div>
         <div style="display:flex; gap:4px;">
             <a href="index.html">Calculator</a>
+            <a href="articles.html">Articles</a>
             <a href="about.html" class="active">About</a>
         </div>
     </nav>
@@ -342,7 +377,32 @@
 
     </div>
 
-    <footer>&copy; 2026 AICostHub Analysis Tool</footer>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-f"><span class="logo-dot"></span> AICostHub</a>
+                <p>Transparent AI cost analysis for developers, founders, and enterprise teams.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Tools</h5>
+                <a href="index.html">Cost Calculator</a>
+                <a href="articles.html">Articles</a>
+            </div>
+            <div class="footer-col">
+                <h5>Company</h5>
+                <a href="about.html">About the Project</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h5>Legal</h5>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 AICostHub Analysis Tool</span>
+            <span>For informational purposes only</span>
+        </div>
+    </footer>
 
 </body>
 </html>
