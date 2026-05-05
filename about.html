@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | AICostHub</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>About AICostHub – Mission, Methodology & Privacy‑First Design</title>
+    <meta name="description" content="AICostHub provides transparent AI API cost estimation. Learn about our methodology, token calculation, privacy guarantees, and the team behind the tool.">
+    <meta name="keywords" content="about AI cost tool, AI pricing methodology, token calculation, privacy-first AI tool">
+    <link rel="canonical" href="https://ai-cost-hub.vercel.app/about.html">
+    <meta property="og:title" content="About AICostHub – Transparent AI Cost Analysis">
+    <meta property="og:description" content="We help developers and startups compare LLM API costs with real-time token pricing, batch discounts, and human labor comparisons.">
+    <meta name="twitter:card" content="summary">
+    <meta name="google-adsense-account" content="ca-pub-3911589843029291">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -67,7 +72,6 @@
         nav a:hover { color: var(--text); background: var(--surface2); }
         nav a.active { color: var(--accent2); background: var(--surface2); }
 
-        /* ── FOOTER ── */
         footer {
             border-top: 1px solid var(--border);
             padding: 48px 32px 36px;
@@ -102,6 +106,7 @@
             display: flex; justify-content: space-between;
             font-size: 12px; color: rgba(255,255,255,0.2);
         }
+
         .page-header {
             border-bottom: 1px solid var(--border);
             padding: 56px 32px 48px;
@@ -140,7 +145,6 @@
             margin: 0 auto;
         }
 
-        /* Content */
         .content {
             max-width: 780px;
             margin: 0 auto;
@@ -185,7 +189,6 @@
             font-weight: 600;
         }
 
-        /* Highlight card */
         .highlight-card {
             background: rgba(59,130,246,0.06);
             border: 1px solid rgba(59,130,246,0.18);
@@ -213,7 +216,6 @@
             line-height: 1.8;
         }
 
-        /* Privacy grid */
         .feature-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -241,7 +243,6 @@
             line-height: 1.6;
         }
 
-        /* Contact */
         .contact-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -282,26 +283,28 @@
             border-color: rgba(59,130,246,0.3);
         }
 
-        footer {
-            text-align: center;
-            padding: 28px;
-            border-top: 1px solid var(--border);
-            color: rgba(255,255,255,0.2);
-            font-size: 12px;
-        }
-
         @media (max-width: 600px) {
             .feature-grid { grid-template-columns: 1fr; }
             .contact-card { flex-direction: column; align-items: flex-start; }
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
         }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About AICostHub",
+            "description": "AICostHub provides transparent AI API cost estimation. Learn about our methodology, token calculation, privacy guarantees.",
+            "url": "https://ai-cost-hub.vercel.app/about.html"
+        }
+    </script>
 </head>
 <body>
 
     <nav>
         <div class="logo"><span class="logo-dot"></span> AICostHub</div>
         <div style="display:flex; gap:4px;">
-            <a href="index.html">Calculator</a>
+            <a href="/">Calculator</a>
             <a href="articles.html">Articles</a>
             <a href="about.html" class="active">About</a>
         </div>
@@ -314,78 +317,52 @@
     </div>
 
     <div class="content">
-
-        <!-- Mission -->
         <div>
             <div class="section-label">Mission</div>
             <h2>Solving AI Cost Complexity</h2>
             <p>Welcome to AICostHub — a dedicated analysis tool built to solve the complexity of the modern AI economy. As of 2026, the landscape of Artificial Intelligence has shifted from "discovery" to "operational efficiency." Our mission is to provide developers, startup founders, and enterprise architects with <strong>transparent, real-time data</strong> on the true costs of model deployment.</p>
         </div>
 
-        <!-- Methodology -->
         <div>
             <div class="section-label">Methodology</div>
             <h2>How We Calculate</h2>
             <p>We track the fluctuating token prices of major providers including OpenAI, Anthropic, Google, and DeepSeek. Our calculator uses a <strong>Weighted Average Token-to-Word Ratio (1.333)</strong> to ensure that business users get a realistic estimate of their monthly burn rate, rather than just a theoretical price-per-token.</p>
         </div>
 
-        <!-- Human Element -->
         <div class="highlight-card">
             <div class="hc-label">The Human Element</div>
             <p>We believe that AI should be viewed as an efficiency multiplier. By including our "Compare to Human" feature, we aim to provide a clear financial visualization of the ROI that automated workflows offer compared to traditional manual labor — giving decision-makers the data they need to act confidently.</p>
         </div>
 
-        <!-- Privacy -->
         <div>
             <div class="section-label">Privacy & Data</div>
             <h2>Your Data Never Leaves the Browser</h2>
             <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🔒</div>
-                    <h4>No Server Storage</h4>
-                    <p>Usage estimates and API configurations are never transmitted or stored.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <h4>Client-Side Only</h4>
-                    <p>All calculations run locally via JavaScript — no backend required.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <h4>No Tracking</h4>
-                    <p>Business strategy and volume data remain strictly private to you.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✦</div>
-                    <h4>Always Free</h4>
-                    <p>This tool is offered free of charge with no account required.</p>
-                </div>
+                <div class="feature-item"><div class="feature-icon">🔒</div><h4>No Server Storage</h4><p>Usage estimates and API configurations are never transmitted or stored.</p></div>
+                <div class="feature-item"><div class="feature-icon">⚡</div><h4>Client-Side Only</h4><p>All calculations run locally via JavaScript — no backend required.</p></div>
+                <div class="feature-item"><div class="feature-icon">🛡️</div><h4>No Tracking</h4><p>Business strategy and volume data remain strictly private to you.</p></div>
+                <div class="feature-item"><div class="feature-icon">✦</div><h4>Always Free</h4><p>This tool is offered free of charge with no account required.</p></div>
             </div>
         </div>
 
-        <!-- Contact -->
         <div>
             <div class="section-label">Contact</div>
             <div class="contact-card">
-                <div>
-                    <h4>Questions or Feedback?</h4>
-                    <p>Spotted a pricing discrepancy or have a suggestion? Reach out.</p>
-                </div>
+                <div><h4>Questions or Feedback?</h4><p>Spotted a pricing discrepancy or have a suggestion? Reach out.</p></div>
                 <a href="mailto:contact@aicosthub.com" class="contact-link">contact@aicosthub.com →</a>
             </div>
         </div>
-
     </div>
 
     <footer>
         <div class="footer-inner">
             <div class="footer-brand">
-                <a href="index.html" class="logo-f"><span class="logo-dot"></span> AICostHub</a>
+                <a href="/" class="logo-f"><span class="logo-dot"></span> AICostHub</a>
                 <p>Transparent AI cost analysis for developers, founders, and enterprise teams.</p>
             </div>
             <div class="footer-col">
                 <h5>Tools</h5>
-                <a href="index.html">Cost Calculator</a>
+                <a href="/">Cost Calculator</a>
                 <a href="articles.html">Articles</a>
             </div>
             <div class="footer-col">
