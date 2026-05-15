@@ -3,330 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | AICostHub – Get Support or Report Pricing Issues</title>
-    <meta name="description" content="Have questions about AI API costs? Need to report a pricing correction or suggest a feature? Contact the AICostHub team – we reply within 1-2 business days.">
-    <meta name="keywords" content="contact AI cost tool, support, pricing correction, feature request, partnership">
-    <link rel="canonical" href="https://ai-cost-hub.vercel.app/contact.html">
-    <meta property="og:title" content="Contact AICostHub – Questions, Corrections, Partnerships">
-    <meta property="og:description" content="Reach out for pricing updates, feature ideas, or general inquiries. We read every message.">
-    <meta property="og:url" content="https://ai-cost-hub.vercel.app/contact.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Contact AICostHub">
-    <meta name="twitter:description" content="Get in touch with the team behind AI cost estimator.">
-    <meta name="google-adsense-account" content="ca-pub-3911589843029291">
+    <title>Contact Us | AICostHub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --bg: #080C14;
-            --surface: #0F1623;
-            --surface2: #161E2E;
-            --border: rgba(255,255,255,0.07);
-            --border2: rgba(255,255,255,0.12);
-            --text: #E8EDF5;
-            --muted: #6B7A99;
-            --accent: #3B82F6;
-            --accent2: #60A5FA;
-            --green: #10B981;
-        }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Sora', sans-serif;
-            font-size: 14px;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 32px;
-            height: 64px;
-            border-bottom: 1px solid var(--border);
-            background: rgba(8,12,20,0.9);
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo {
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
-        .logo-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-            display: inline-block;
-            box-shadow: 0 0 10px var(--accent);
-        }
-        nav a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            padding: 6px 14px;
-            border-radius: 6px;
-            transition: all 0.2s;
-        }
-        nav a:hover {
-            color: var(--text);
-            background: var(--surface2);
-        }
+        :root { --bg: #080C14; --surface: #0F1623; --surface2: #161E2E; --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12); --text: #E8EDF5; --muted: #6B7A99; --accent: #3B82F6; --accent2: #60A5FA; --green: #10B981; }
+        body { background: var(--bg); color: var(--text); font-family: 'Sora', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 32px; height: 64px; border-bottom: 1px solid var(--border); background: rgba(8,12,20,0.9); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; box-shadow: 0 0 10px var(--accent); }
+        nav a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 6px; transition: all 0.2s; }
+        nav a:hover { color: var(--text); background: var(--surface2); }
 
-        .page-header {
-            padding: 56px 32px 48px;
-            border-bottom: 1px solid var(--border);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 500px;
-            height: 250px;
-            background: radial-gradient(ellipse, rgba(59,130,246,0.09) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .eyebrow {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent2);
-            margin-bottom: 12px;
-        }
-        .page-header h1 {
-            font-size: clamp(26px, 4vw, 40px);
-            font-weight: 700;
-            letter-spacing: -1px;
-            line-height: 1.2;
-            margin-bottom: 14px;
-        }
-        .page-header p {
-            color: var(--muted);
-            font-size: 15px;
-        }
+        .page-header { padding: 56px 32px 48px; border-bottom: 1px solid var(--border); text-align: center; position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 500px; height: 250px; background: radial-gradient(ellipse, rgba(59,130,246,0.09) 0%, transparent 70%); pointer-events: none; }
+        .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 12px; }
+        .page-header h1 { font-size: clamp(26px, 4vw, 40px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; margin-bottom: 14px; }
+        .page-header p { color: var(--muted); font-size: 15px; }
 
-        .content {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 56px 24px 80px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            align-items: start;
-        }
-        .contact-info h2 {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            margin-bottom: 14px;
-        }
-        .contact-info p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.85;
-            margin-bottom: 20px;
-        }
-        .info-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 22px;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .info-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: rgba(59,130,246,0.1);
-            border: 1px solid rgba(59,130,246,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-        .info-card div h4 {
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 3px;
-        }
-        .info-card div p {
-            font-size: 12px;
-            color: var(--muted);
-            margin: 0;
-        }
-        .info-card div a {
-            color: var(--accent2);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-        }
-        .contact-form-wrap {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px;
-        }
-        .contact-form-wrap h3 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 22px;
-        }
-        .form-group {
-            margin-bottom: 18px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 8px;
-        }
+        .content { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+        
+        /* Left: info */
+        .contact-info h2 { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 14px; }
+        .contact-info p { color: var(--muted); font-size: 14px; line-height: 1.85; margin-bottom: 20px; }
+
+        .info-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; margin-bottom: 14px; display: flex; align-items: center; gap: 16px; }
+        .info-icon { width: 38px; height: 38px; border-radius: 10px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+        .info-card div h4 { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+        .info-card div p { font-size: 12px; color: var(--muted); margin: 0; }
+        .info-card div a { color: var(--accent2); text-decoration: none; font-size: 13px; font-weight: 500; }
+
+        /* Right: form */
+        .contact-form-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+        .contact-form-wrap h3 { font-size: 16px; font-weight: 700; margin-bottom: 22px; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
         .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            background: var(--surface2);
-            border: 1px solid var(--border2);
-            border-radius: 8px;
-            padding: 11px 14px;
-            color: var(--text);
-            font-family: 'Sora', sans-serif;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            resize: none;
+            width: 100%; background: var(--surface2); border: 1px solid var(--border2); border-radius: 8px;
+            padding: 11px 14px; color: var(--text); font-family: 'Sora', sans-serif; font-size: 14px;
+            outline: none; transition: border-color 0.2s, box-shadow 0.2s; resize: none;
         }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+            border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
         }
-        .form-group select option {
-            background: var(--surface2);
-        }
-        .form-group textarea {
-            height: 110px;
-            line-height: 1.6;
-        }
-        .submit-btn {
-            width: 100%;
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 13px;
-            border-radius: 9px;
-            font-family: 'Sora', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 4px;
-        }
-        .submit-btn:hover {
-            background: #2563EB;
-        }
-        .form-note {
-            font-size: 11px;
-            color: var(--muted);
-            margin-top: 12px;
-            text-align: center;
-        }
+        .form-group select option { background: var(--surface2); }
+        .form-group textarea { height: 110px; line-height: 1.6; }
+        .submit-btn { width: 100%; background: var(--accent); color: white; border: none; padding: 13px; border-radius: 9px; font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; transition: background 0.2s; margin-top: 4px; }
+        .submit-btn:hover { background: #2563EB; }
+        .form-note { font-size: 11px; color: var(--muted); margin-top: 12px; text-align: center; }
 
-        /* === FOOTER – identical to about.html === */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 48px 32px 36px;
-        }
-        .footer-inner {
-            max-width: 760px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr auto auto auto;
-            gap: 40px;
-            align-items: start;
-            margin-bottom: 36px;
-        }
-        .footer-brand .logo-f {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
-            text-decoration: none;
-        }
-        .footer-brand p {
-            font-size: 12px;
-            color: var(--muted);
-            max-width: 200px;
-            line-height: 1.65;
-        }
-        .footer-col h5 {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 14px;
-        }
-        .footer-col a {
-            display: block;
-            color: rgba(255,255,255,0.45);
-            text-decoration: none;
-            font-size: 13px;
-            margin-bottom: 10px;
-            transition: color 0.2s;
-        }
-        .footer-col a:hover {
-            color: var(--text);
-        }
-        .footer-bottom {
-            max-width: 760px;
-            margin: 0 auto;
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: rgba(255,255,255,0.2);
-        }
+        footer { border-top: 1px solid var(--border); padding: 40px 32px 28px; }
+        .footer-inner { max-width: 760px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 28px; }
+        .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; margin-bottom: 8px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--text); }
+        .footer-bottom { max-width: 760px; margin: 0 auto; border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.2); }
 
-        @media (max-width: 640px) {
-            .content { grid-template-columns: 1fr; }
-            .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
-        }
+        @media (max-width: 640px) { .content { grid-template-columns: 1fr; } }
     </style>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "name": "Contact AICostHub",
-            "description": "Contact the AICostHub team for pricing corrections, feature requests, or general inquiries.",
-            "url": "https://ai-cost-hub.vercel.app/contact.html"
-        }
-    </script>
 </head>
 <body>
 
@@ -335,6 +71,8 @@
         <div style="display:flex; gap:4px;">
             <a href="/">Calculator</a>
             <a href="articles.html">Articles</a>
+                <a href="faq.html">FAQ</a>
+            <a href="glossary.html">Glossary</a>
             <a href="about.html">About</a>
         </div>
     </nav>
@@ -405,14 +143,11 @@
 
     <footer>
         <div class="footer-inner">
-            <div class="footer-brand">
-                <a href="/" class="logo-f"><span class="logo-dot"></span> AICostHub</a>
-                <p>Transparent AI cost analysis for developers, founders, and enterprise teams.</p>
-            </div>
             <div class="footer-col">
                 <h5>Tools</h5>
                 <a href="/">Cost Calculator</a>
                 <a href="articles.html">Articles</a>
+                <a href="faq.html">FAQ</a>
             </div>
             <div class="footer-col">
                 <h5>Company</h5>

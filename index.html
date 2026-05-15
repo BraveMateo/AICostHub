@@ -3,30 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI API Cost Estimator 2026 | Compare GPT-5, Claude, Gemini | AICostHub</title>
-    <meta name="description" content="Real‑time AI API cost estimator for GPT-5.4, Claude 4.6, Gemini 3.1 Pro, and more. Compare monthly token costs, enable batch discounts, and see human vs. AI savings.">
-    <meta name="keywords" content="AI cost calculator, GPT-5 pricing, Claude API cost, Gemini tokens, batch processing">
-    <meta name="author" content="AICostHub">
-    <link rel="canonical" href="https://ai-cost-hub.vercel.app/">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="AI API Cost Estimator 2026 | AICostHub">
-    <meta property="og:description" content="Compare real‑time token costs across GPT-5.4, Claude 4.6, Gemini 3.1 Pro, and more. Includes batch discount toggle and human labor comparison.">
-    <meta property="og:url" content="https://ai-cost-hub.vercel.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://ai-cost-hub.vercel.app/og-image.png">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI API Cost Estimator 2026 | AICostHub">
-    <meta name="twitter:description" content="Compare GPT-5, Claude, Gemini costs with batch discounts. Visualize human vs. AI savings.">
-    
     <meta name="google-adsense-account" content="ca-pub-3911589843029291">
+    <title>AI Cost Estimator 2026 | AICostHub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* (your existing CSS — unchanged from original) */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
         :root {
             --bg:        #080C14;
             --surface:   #0F1623;
@@ -42,144 +25,539 @@
             --red:       #EF4444;
             --glow:      rgba(59,130,246,0.15);
         }
-        body { background: var(--bg); color: var(--text); font-family: 'Sora', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 32px; height: 64px; border-bottom: 1px solid var(--border); background: rgba(8,12,20,0.9); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Sora', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ── NAV ── */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+            height: 64px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(8,12,20,0.9);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; box-shadow: 0 0 10px var(--accent); }
-        nav a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 6px; transition: all 0.2s; }
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
         nav a:hover, nav a.active { color: var(--text); background: var(--surface2); }
         nav a.active { color: var(--accent2); }
-        header { padding: 56px 32px 48px; text-align: center; position: relative; overflow: hidden; }
-        header::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 600px; height: 300px; background: radial-gradient(ellipse at center, rgba(59,130,246,0.12) 0%, transparent 70%); pointer-events: none; }
-        .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25); color: var(--accent2); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; }
+
+        /* ── HEADER ── */
+        header {
+            padding: 56px 32px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -80px; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 300px;
+            background: radial-gradient(ellipse at center, rgba(59,130,246,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.25);
+            color: var(--accent2);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
         .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-        h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -1.5px; color: var(--text); margin-bottom: 12px; line-height: 1.15; }
+        h1 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            color: var(--text);
+            margin-bottom: 12px;
+            line-height: 1.15;
+        }
         h1 span { color: var(--accent); }
-        header p { color: var(--muted); font-size: 15px; font-weight: 400; }
-        main { max-width: 1080px; margin: 0 auto; padding: 0 24px 64px; display: grid; grid-template-columns: 360px 1fr; gap: 24px; align-items: start; }
-        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
-        .card-title { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
+        header p {
+            color: var(--muted);
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        /* ── MAIN GRID ── */
+        main {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px 64px;
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* ── CARDS ── */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+        }
+        .card-title {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        /* ── INPUTS ── */
         .input-group { margin-bottom: 18px; }
-        .input-group label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
-        .input-group input { width: 100%; background: var(--surface2); border: 1px solid var(--border2); border-radius: 8px; padding: 11px 16px; color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
-        .input-group input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
-        .toggle-row { display: flex; align-items: center; justify-content: space-between; background: var(--surface2); border: 1px solid var(--border2); border-radius: 10px; padding: 14px 16px; margin-bottom: 22px; }
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .input-group input {
+            width: 100%;
+            background: var(--surface2);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            padding: 11px 16px;
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .input-group input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+        }
+
+        /* ── TOGGLE ── */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--surface2);
+            border: 1px solid var(--border2);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 22px;
+        }
         .toggle-info { display: flex; flex-direction: column; }
         .toggle-label { font-weight: 600; font-size: 13px; color: var(--text); }
         .toggle-sub { font-size: 11px; color: var(--green); font-weight: 500; margin-top: 2px; }
+
         .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
         .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; inset: 0; background: var(--border2); border-radius: 24px; cursor: pointer; transition: 0.25s; }
-        .slider::before { content: ''; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: 0.25s; box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+        .slider {
+            position: absolute; inset: 0;
+            background: var(--border2);
+            border-radius: 24px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .slider::before {
+            content: '';
+            position: absolute;
+            width: 18px; height: 18px;
+            left: 3px; top: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.25s;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+        }
         input:checked + .slider { background: var(--green); }
         input:checked + .slider::before { transform: translateX(20px); }
-        .calc-btn { width: 100%; background: var(--accent); color: white; border: none; padding: 13px; border-radius: 9px; font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.1s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(59,130,246,0.3); }
+
+        /* ── BUTTON ── */
+        .calc-btn {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 9px;
+            font-family: 'Sora', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(59,130,246,0.3);
+        }
         .calc-btn:hover { background: #2563EB; box-shadow: 0 6px 24px rgba(59,130,246,0.4); }
         .calc-btn:active { transform: scale(0.98); }
-        #human-comparison { margin-top: 22px; background: rgba(245,158,11,0.07); border: 1px solid rgba(245,158,11,0.2); border-radius: 12px; padding: 20px; }
+
+        /* ── HUMAN COMPARISON ── */
+        #human-comparison {
+            margin-top: 22px;
+            background: rgba(245,158,11,0.07);
+            border: 1px solid rgba(245,158,11,0.2);
+            border-radius: 12px;
+            padding: 20px;
+        }
         #human-comparison.hidden { display: none; }
-        .hc-title { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
-        .hc-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 13px; }
+        .hc-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 14px;
+        }
+        .hc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
         .hc-row span:first-child { color: var(--muted); }
         .hc-row span:last-child { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--red); }
-        .savings-track { background: rgba(255,255,255,0.06); border-radius: 4px; height: 6px; overflow: hidden; margin-bottom: 10px; }
-        #savings-bar { height: 100%; background: linear-gradient(90deg, var(--green), #34D399); border-radius: 4px; width: 0%; transition: width 0.8s cubic-bezier(0.22,1,0.36,1); }
+        .savings-track {
+            background: rgba(255,255,255,0.06);
+            border-radius: 4px;
+            height: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        #savings-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--green), #34D399);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.22,1,0.36,1);
+        }
         .hc-note { font-size: 10px; color: rgba(245,158,11,0.6); }
-        .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-        .results-title { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-        #mode-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; background: rgba(59,130,246,0.12); color: var(--accent2); border: 1px solid rgba(59,130,246,0.2); }
+
+        /* ── RESULTS PANEL ── */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+        .results-title {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        #mode-badge {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(59,130,246,0.12);
+            color: var(--accent2);
+            border: 1px solid rgba(59,130,246,0.2);
+        }
         #mode-badge.batch { background: rgba(16,185,129,0.1); color: var(--green); border-color: rgba(16,185,129,0.25); }
+
+        /* ── MODEL CARDS ── */
         #results-container { display: flex; flex-direction: column; gap: 10px; }
-        .model-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; transition: border-color 0.2s, box-shadow 0.2s; animation: fadeSlide 0.3s ease both; }
+        .model-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            animation: fadeSlide 0.3s ease both;
+        }
         .model-card:hover { border-color: var(--border2); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-        @keyframes fadeSlide { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
         .model-card:nth-child(1) { animation-delay: 0.05s; }
         .model-card:nth-child(2) { animation-delay: 0.10s; }
         .model-card:nth-child(3) { animation-delay: 0.15s; }
         .model-card:nth-child(4) { animation-delay: 0.20s; }
         .model-card:nth-child(5) { animation-delay: 0.25s; }
         .model-card.cheapest { border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.05); }
+
         .model-left { display: flex; flex-direction: column; gap: 4px; }
         .model-name { font-size: 14px; font-weight: 600; color: var(--text); }
         .model-meta { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
-        .meta-tag { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 7px; border-radius: 4px; background: var(--surface2); color: var(--muted); }
+        .meta-tag {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 2px 7px;
+            border-radius: 4px;
+            background: var(--surface2);
+            color: var(--muted);
+        }
         .meta-tag.batch { background: rgba(16,185,129,0.1); color: var(--green); }
         .meta-tag.best { background: rgba(16,185,129,0.15); color: var(--green); }
-        .model-cost { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 600; color: var(--accent2); }
+
+        .model-cost {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent2);
+        }
         .model-cost.batch-cost { color: var(--green); }
-        .ad-box { margin-top: 16px; border: 1px dashed rgba(255,255,255,0.08); border-radius: 10px; padding: 28px; text-align: center; color: rgba(255,255,255,0.15); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
-        .guide-section { max-width: 860px; margin: 0 auto; padding: 64px 24px 72px; border-top: 1px solid var(--border); }
-        .guide-section .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; }
-        .guide-section h2 { font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.8px; margin-bottom: 10px; line-height: 1.25; }
-        .guide-section .guide-intro { color: var(--muted); font-size: 15px; line-height: 1.75; margin-bottom: 48px; max-width: 680px; }
+
+        /* ── AD PLACEHOLDER ── */
+        .ad-box {
+            margin-top: 16px;
+            border: 1px dashed rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 28px;
+            text-align: center;
+            color: rgba(255,255,255,0.15);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* ── GUIDE SECTION ── */
+        .guide-section {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 64px 24px 72px;
+            border-top: 1px solid var(--border);
+        }
+        .guide-section .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 10px;
+        }
+        .guide-section h2 {
+            font-size: clamp(22px, 3vw, 34px);
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+        .guide-section .guide-intro {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 48px;
+            max-width: 680px;
+        }
         .guide-block { margin-bottom: 44px; }
-        .guide-block h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-        .guide-block h3 .num { width: 28px; height: 28px; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--accent2); flex-shrink: 0; }
+        .guide-block h3 {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .guide-block h3 .num {
+            width: 28px; height: 28px;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.25);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent2);
+            flex-shrink: 0;
+        }
         .guide-block p { color: var(--muted); font-size: 14px; line-height: 1.85; margin-bottom: 12px; }
         .guide-block p:last-child { margin-bottom: 0; }
         .guide-block strong { color: var(--text); font-weight: 600; }
-        .guide-callout { background: var(--surface); border: 1px solid var(--border2); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 22px; margin-top: 16px; font-size: 13px; color: var(--muted); line-height: 1.75; }
+        .guide-callout {
+            background: var(--surface);
+            border: 1px solid var(--border2);
+            border-left: 3px solid var(--accent);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
         .guide-callout strong { color: var(--accent2); }
-        .guide-divider { border: none; border-top: 1px solid var(--border); margin: 44px 0; }
-        .articles-cta { background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 28px 30px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 48px; }
+        .guide-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 44px 0;
+        }
+        .articles-cta {
+            background: var(--surface);
+            border: 1px solid var(--border2);
+            border-radius: 14px;
+            padding: 28px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 48px;
+        }
         .articles-cta div h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
         .articles-cta div p { font-size: 13px; color: var(--muted); }
-        .cta-link { flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: white; text-decoration: none; font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 8px; transition: background 0.2s; letter-spacing: 0.02em; }
+        .cta-link {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            letter-spacing: 0.02em;
+        }
         .cta-link:hover { background: #2563EB; }
-        footer { border-top: 1px solid var(--border); padding: 48px 32px 36px; }
-        .footer-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto auto; gap: 48px; align-items: start; margin-bottom: 36px; }
-        .footer-brand .logo { font-size: 16px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; text-decoration: none; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 48px 32px 36px;
+        }
+        .footer-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            gap: 48px;
+            align-items: start;
+            margin-bottom: 36px;
+        }
+        .footer-brand .logo {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
         .footer-brand p { font-size: 12px; color: var(--muted); line-height: 1.65; max-width: 220px; }
-        .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-        .footer-col a { display: block; color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+        .footer-col h5 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
         .footer-col a:hover { color: var(--text); }
-        .footer-bottom { max-width: 1080px; margin: 0 auto; border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.2); }
-        @media (max-width: 768px) { main { grid-template-columns: 1fr; } }
+        .footer-bottom {
+            max-width: 1080px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 768px) {
+            main { grid-template-columns: 1fr; }
+            .article-grid { grid-template-columns: 1fr; }
+        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3911589843029291" crossorigin="anonymous"></script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "AI API Cost Estimator",
-        "description": "Compare real‑time AI token costs across GPT-5.4, Claude 4.6, Gemini 3.1 Pro, DeepSeek V4, and GPT-5 Nano. Includes batch processing discount and human labor comparison.",
-        "url": "https://ai-cost-hub.vercel.app/",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        }
-    }
-    </script>
 </head>
 <body>
+
     <nav>
-        <a href="/" class="logo"><span class="logo-dot"></span> AICostHub</a>
+        <div class="logo"><span class="logo-dot"></span> AICostHub</div>
         <div style="display:flex; gap:4px;">
             <a href="/" class="active">Calculator</a>
             <a href="articles.html">Articles</a>
+            <a href="faq.html">FAQ</a>
             <a href="about.html">About</a>
         </div>
     </nav>
+
     <header>
         <div class="badge"><span class="badge-dot"></span> Live Pricing · 2026</div>
         <h1>AI API <span>Cost Estimator</span></h1>
         <p>Compare monthly model costs across leading providers — instantly.</p>
     </header>
+
     <main>
+        <!-- Input Panel -->
         <div class="card">
             <div class="card-title">Configure Usage</div>
+
             <div class="input-group">
                 <label>Monthly Requests</label>
                 <input type="number" id="requests" value="10000">
             </div>
+
             <div class="input-group">
                 <label>Avg. Words per Prompt</label>
                 <input type="number" id="words" value="500">
             </div>
+
             <div class="toggle-row">
                 <div class="toggle-info">
                     <span class="toggle-label">Batch Processing</span>
@@ -190,7 +568,10 @@
                     <span class="slider"></span>
                 </label>
             </div>
+
             <button class="calc-btn" onclick="updateCosts()">Calculate Monthly Cost</button>
+
+            <!-- Human Comparison -->
             <div id="human-comparison" class="hidden">
                 <div class="hc-title">⚡ Human vs. AI Savings</div>
                 <div class="hc-row">
@@ -203,6 +584,8 @@
                 <div class="hc-note">*$35/hr at 800 words/hr efficiency (2026 avg)</div>
             </div>
         </div>
+
+        <!-- Results Panel -->
         <div>
             <div class="results-header">
                 <div class="results-title">Monthly Cost Estimate</div>
@@ -212,10 +595,13 @@
             <div class="ad-box">Advertisement · Enterprise API Solutions</div>
         </div>
     </main>
+
+    <!-- Guide Section -->
     <div class="guide-section">
         <div class="section-label">Resource Guide</div>
         <h2>The 2026 Guide to AI API Pricing</h2>
-        <p class="guide-intro">Whether you're a solo developer building your first LLM-powered app or an enterprise architect managing multi-million token workloads, understanding how AI providers charge for their services is essential to keeping your budget under control. This guide breaks down the core concepts behind token pricing so you can make smarter, more cost-effective decisions.</p>
+        <p class="guide-intro">Look — I wasted $800 in my first month using GPT-4 because I didn't understand how tokens worked. That mistake funded this entire guide. Whether you're bootstrapping your first AI feature or managing enterprise-scale deployments, the concepts below will save you more money than any framework tutorial ever could. Let's break down how these companies actually charge you.</p>
+
         <div class="guide-block">
             <h3><span class="num">1</span> What Is a Token?</h3>
             <p>Every AI language model processes text by breaking it into small chunks called <strong>tokens</strong>. A token is not exactly a word — it's closer to a syllable or a common character sequence. On average, one token represents roughly <strong>0.75 words</strong>, or conversely, 100 words translates to approximately 133 tokens. This is why our calculator uses a 1.333 token-to-word ratio as its baseline.</p>
@@ -224,7 +610,9 @@
                 <strong>Rule of thumb:</strong> When budgeting for an LLM integration, always convert your expected word counts to tokens first. Multiply your total words by 1.33 to get a conservative token estimate, then price against your chosen model's per-million-token rate.
             </div>
         </div>
+
         <hr class="guide-divider">
+
         <div class="guide-block">
             <h3><span class="num">2</span> Input Tokens vs. Output Tokens</h3>
             <p>AI providers split their pricing into two distinct categories: <strong>input tokens</strong> (what you send to the model) and <strong>output tokens</strong> (what the model generates back). These are almost always priced differently, and output tokens are typically <strong>3 to 5 times more expensive</strong> than input tokens.</p>
@@ -234,7 +622,9 @@
                 <strong>Optimization tip:</strong> Reduce output token consumption by asking models to be concise, using structured output formats like JSON (which is token-dense), and avoiding open-ended generation prompts where brevity is acceptable.
             </div>
         </div>
+
         <hr class="guide-divider">
+
         <div class="guide-block">
             <h3><span class="num">3</span> Why Batch Processing Saves You 50%</h3>
             <p>Both OpenAI and Anthropic introduced <strong>Batch Processing APIs</strong> that offer a flat 50% discount on all token costs — for both input and output. The trade-off is latency: instead of receiving a response within milliseconds, your requests are queued and processed within a 24-hour window.</p>
@@ -244,12 +634,15 @@
                 <strong>When to use Batch:</strong> Content pipelines · SEO generation · Report creation · Email drafting · Data extraction · Sentiment analysis · Embedding generation · Any non-interactive workflow with a tolerance for delay.
             </div>
         </div>
+
         <hr class="guide-divider">
+
         <div class="guide-block">
             <h3><span class="num">4</span> Choosing the Right Model for Your Budget</h3>
             <p>Not every task needs the most capable — or most expensive — model. The 2026 AI market has stratified into clear tiers. Frontier reasoning models like <strong>GPT-5.4</strong> and <strong>Claude 4.6 Sonnet</strong> are best suited for complex analysis, multi-step reasoning, and high-stakes generation. Mid-tier models like <strong>Gemini 3.1 Pro</strong> offer an excellent balance of quality and cost. Lightweight models like <strong>GPT-5 Nano</strong> are optimized for speed and cost efficiency at scale, handling straightforward tasks like classification or simple Q&A at a fraction of the price.</p>
             <p>At the extreme low end, <strong>DeepSeek V4</strong> has disrupted the market with input and output pricing as low as $0.28 per million tokens — making it the go-to option for high-volume, cost-sensitive workloads where maximum intelligence isn't required. Use the calculator above to model how different model selections impact your monthly budget across your actual request volumes.</p>
         </div>
+
         <div class="articles-cta">
             <div>
                 <h4>Want deeper dives?</h4>
@@ -258,6 +651,7 @@
             <a href="articles.html" class="cta-link">Browse Articles →</a>
         </div>
     </div>
+
     <footer>
         <div class="footer-inner">
             <div class="footer-brand">
@@ -268,6 +662,7 @@
                 <h5>Tools</h5>
                 <a href="/">Cost Calculator</a>
                 <a href="articles.html">Articles</a>
+                <a href="glossary.html">Glossary</a>
             </div>
             <div class="footer-col">
                 <h5>Company</h5>
@@ -284,6 +679,7 @@
             <span>For informational purposes only</span>
         </div>
     </footer>
+
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Resources, Glossary & Cost Optimization Guides 2026 | AICostHub</title>
+    <meta name="description" content="Free AI cost resources for developers: token pricing glossary, prompt cost cheat sheet, optimization checklist, and official links to OpenAI, Anthropic, Google, and DeepSeek pricing pages.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #080C14; --surface: #0F1623; --surface2: #161E2E;
+            --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+            --text: #E8EDF5; --muted: #6B7A99;
+            --accent: #3B82F6; --accent2: #60A5FA;
+            --green: #10B981; --amber: #F59E0B; --purple: #8B5CF6; --red: #EF4444;
+        }
+        body { background: var(--bg); color: var(--text); font-family: 'Sora', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 32px; height: 64px; border-bottom: 1px solid var(--border); background: rgba(8,12,20,0.9); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; box-shadow: 0 0 10px var(--accent); }
+        nav a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 6px; transition: all 0.2s; }
+        nav a:hover { color: var(--text); background: var(--surface2); }
+        nav a.active { color: var(--accent2); background: var(--surface2); }
+        .page-header { padding: 56px 32px 48px; border-bottom: 1px solid var(--border); text-align: center; position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(59,130,246,0.1) 0%, transparent 70%); pointer-events: none; }
+        .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 14px; }
+        .page-header h1 { font-size: clamp(26px, 4vw, 42px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; margin-bottom: 14px; }
+        .page-header p { color: var(--muted); font-size: 15px; max-width: 520px; margin: 0 auto; }
+        .jump-bar { max-width: 960px; margin: 0 auto; padding: 24px 24px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+        .jump-pill { font-size: 12px; font-weight: 600; padding: 7px 16px; border-radius: 20px; background: var(--surface); border: 1px solid var(--border2); color: var(--muted); text-decoration: none; transition: all 0.2s; }
+        .jump-pill:hover { color: var(--accent2); border-color: rgba(96,165,250,0.3); background: rgba(59,130,246,0.07); }
+        .content-wrap { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; display: flex; flex-direction: column; gap: 64px; }
+        .sec-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+        .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        .sec-header { margin-bottom: 28px; }
+        .sec-header h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 10px; }
+        .sec-header p { color: var(--muted); font-size: 14px; line-height: 1.75; max-width: 680px; }
+        .sec-header a { color: var(--accent2); text-decoration: none; }
+        /* CHEAT SHEET */
+        .cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .cheat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; }
+        .cheat-card .cheat-title { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+        .cheat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--border); gap: 16px; }
+        .cheat-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .cheat-row .lbl { font-size: 13px; color: var(--muted); }
+        .cheat-row .val { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; color: var(--accent2); white-space: nowrap; }
+        .val.green { color: var(--green); } .val.amber { color: var(--amber); } .val.purple { color: var(--purple); } .val.red { color: var(--red); }
+        .formula-box { background: var(--surface2); border: 1px solid var(--border2); border-radius: 12px; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; margin-top: 0; line-height: 2; }
+        .formula-box .cm { color: var(--muted); font-size: 12px; }
+        .formula-box .vr { color: var(--accent2); }
+        .formula-box .op { color: var(--amber); }
+        .formula-box .rs { color: var(--green); font-weight: 600; }
+        /* PRICING TABLE */
+        .pricing-table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        thead th { background: var(--surface2); padding: 14px 18px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border2); }
+        tbody td { padding: 14px 18px; border-bottom: 1px solid var(--border); color: var(--muted); vertical-align: middle; }
+        tbody td:first-child { color: var(--text); font-weight: 600; }
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: rgba(255,255,255,0.02); }
+        .mono { font-family: 'JetBrains Mono', monospace; color: var(--accent2); }
+        .mono.green { color: var(--green); } .mono.na { color: var(--muted); opacity: 0.5; }
+        .tier-badge { display: inline-flex; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
+        .tier-f { background: rgba(139,92,246,0.12); color: var(--purple); border: 1px solid rgba(139,92,246,0.2); }
+        .tier-m { background: rgba(59,130,246,0.1); color: var(--accent2); border: 1px solid rgba(59,130,246,0.2); }
+        .tier-b { background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.2); }
+        /* GLOSSARY */
+        .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .glossary-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; transition: border-color 0.2s; }
+        .glossary-item:hover { border-color: var(--border2); }
+        .glossary-term { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 7px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .term-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; }
+        .tag-core { background: rgba(59,130,246,0.12); color: var(--accent2); }
+        .tag-infra { background: rgba(16,185,129,0.1); color: var(--green); }
+        .tag-pricing { background: rgba(245,158,11,0.1); color: var(--amber); }
+        .tag-technique { background: rgba(139,92,246,0.1); color: var(--purple); }
+        .glossary-def { font-size: 13px; color: var(--muted); line-height: 1.75; }
+        /* CHECKLIST */
+        .checklist-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .checklist-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+        .checklist-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+        .check-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .check-box { width: 20px; height: 20px; border: 2px solid var(--border2); border-radius: 5px; flex-shrink: 0; margin-top: 2px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+        .check-box:hover { border-color: var(--accent); }
+        .check-box.checked { background: var(--green); border-color: var(--green); }
+        .check-box.checked::after { content: '✓'; color: white; font-size: 11px; font-weight: 700; }
+        .check-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+        .check-text strong { color: var(--text); font-weight: 600; }
+        .check-savings { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 7px; border-radius: 10px; background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.2); margin-top: 4px; }
+        /* PROVIDER LINKS */
+        .provider-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .provider-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px 18px; text-align: center; transition: all 0.2s; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .provider-card:hover { border-color: var(--border2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        .provider-icon { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .pi-openai { background: rgba(255,255,255,0.06); }
+        .pi-anthropic { background: rgba(245,158,11,0.1); }
+        .pi-google { background: rgba(59,130,246,0.1); }
+        .pi-deepseek { background: rgba(16,185,129,0.1); }
+        .provider-name { font-size: 14px; font-weight: 700; color: var(--text); }
+        .provider-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+        .provider-link-label { font-size: 11px; font-weight: 700; color: var(--accent2); }
+        /* FOOTER */
+        footer { border-top: 1px solid var(--border); padding: 48px 32px 36px; }
+        .footer-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto auto; gap: 40px; align-items: start; margin-bottom: 36px; }
+        .footer-brand .logo-f { font-size: 16px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; text-decoration: none; }
+        .footer-brand p { font-size: 12px; color: var(--muted); max-width: 200px; line-height: 1.65; }
+        .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--text); }
+        .footer-bottom { max-width: 960px; margin: 0 auto; border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.2); }
+        @media (max-width: 700px) {
+            .cheat-grid, .glossary-grid, .checklist-wrap { grid-template-columns: 1fr; }
+            .provider-grid { grid-template-columns: 1fr 1fr; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="/" class="logo"><span class="logo-dot"></span> AICostHub</a>
+    <div style="display:flex; gap:4px;">
+        <a href="/">Calculator</a>
+        <a href="articles.html">Articles</a>
+        <a href="resources.html" class="active">Resources</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="eyebrow">Resources & References</div>
+    <h1>The AI Cost Toolkit</h1>
+    <p>Cheat sheets, a complete glossary, an optimization checklist, and official pricing links — everything you need to understand and control your AI API spend.</p>
+</div>
+
+<div class="jump-bar">
+    <a href="#cheatsheet" class="jump-pill">📋 Cheat Sheet</a>
+    <a href="#pricing"    class="jump-pill">💰 Pricing Reference</a>
+    <a href="#glossary"   class="jump-pill">📖 Glossary</a>
+    <a href="#checklist"  class="jump-pill">✅ Optimization Checklist</a>
+    <a href="#providers"  class="jump-pill">🔗 Provider Links</a>
+</div>
+
+<div class="content-wrap">
+
+    <!-- CHEAT SHEET -->
+    <div id="cheatsheet">
+        <div class="sec-label">Quick Reference</div>
+        <div class="sec-header">
+            <h2>Token Pricing Cheat Sheet</h2>
+            <p>The essential conversion formulas and benchmarks every developer working with LLM APIs should know. Bookmark this.</p>
+        </div>
+        <div class="cheat-grid">
+            <div class="cheat-card">
+                <div class="cheat-title">Token Conversion Rules</div>
+                <div class="cheat-row"><span class="lbl">Words → Tokens (English)</span><span class="val">× 1.333</span></div>
+                <div class="cheat-row"><span class="lbl">Tokens → Words</span><span class="val">÷ 1.333</span></div>
+                <div class="cheat-row"><span class="lbl">100 words</span><span class="val">≈ 133 tokens</span></div>
+                <div class="cheat-row"><span class="lbl">1,000 words (one essay)</span><span class="val">≈ 1,333 tokens</span></div>
+                <div class="cheat-row"><span class="lbl">1 page (~250 words)</span><span class="val">≈ 333 tokens</span></div>
+                <div class="cheat-row"><span class="lbl">Code (denser than prose)</span><span class="val amber">× 1.5–2.0</span></div>
+                <div class="cheat-row"><span class="lbl">Non-Latin scripts (CJK etc.)</span><span class="val red">× 2.0–4.0</span></div>
+            </div>
+            <div class="cheat-card">
+                <div class="cheat-title">Cost Benchmarks (2026)</div>
+                <div class="cheat-row"><span class="lbl">1M words input — GPT-5.4</span><span class="val">≈ $3.33</span></div>
+                <div class="cheat-row"><span class="lbl">1M words output — GPT-5.4</span><span class="val">≈ $20.00</span></div>
+                <div class="cheat-row"><span class="lbl">1M words input — Gemini 3.1</span><span class="val green">≈ $2.67</span></div>
+                <div class="cheat-row"><span class="lbl">1M words — DeepSeek V4</span><span class="val green">≈ $0.37</span></div>
+                <div class="cheat-row"><span class="lbl">Batch discount (most models)</span><span class="val green">−50% all tokens</span></div>
+                <div class="cheat-row"><span class="lbl">Prompt cache savings</span><span class="val purple">~90% off cached tokens</span></div>
+                <div class="cheat-row"><span class="lbl">Typical output:input ratio</span><span class="val">1.5× inputs</span></div>
+            </div>
+            <div class="cheat-card">
+                <div class="cheat-title">Monthly Cost Formula</div>
+                <div class="formula-box">
+                    <span class="cm">// Your inputs</span><br>
+                    <span class="vr">requests</span> <span class="op">=</span> 10,000 / mo<br>
+                    <span class="vr">words</span> <span class="op">=</span> 500 / request<br>
+                    <span class="vr">in_rate</span> <span class="op">=</span> $3.00 / 1M<br>
+                    <span class="vr">out_rate</span> <span class="op">=</span> $15.00 / 1M<br><br>
+                    <span class="cm">// Calculate</span><br>
+                    <span class="vr">in_tok</span> = (words × 1.333) / 1M<br>
+                    <span class="vr">out_tok</span> = in_tok × 1.5<br><br>
+                    <span class="rs">cost = (in_tok × in_rate) + (out_tok × out_rate)</span>
+                </div>
+            </div>
+            <div class="cheat-card">
+                <div class="cheat-title">True Cost Multipliers</div>
+                <div class="cheat-row"><span class="lbl">Base token cost</span><span class="val">1.0×</span></div>
+                <div class="cheat-row"><span class="lbl">+ System prompt overhead</span><span class="val amber">+10–20%</span></div>
+                <div class="cheat-row"><span class="lbl">+ Retry / failure rate</span><span class="val amber">+5–15%</span></div>
+                <div class="cheat-row"><span class="lbl">+ Embedding pipeline (RAG)</span><span class="val amber">+5–15%</span></div>
+                <div class="cheat-row"><span class="lbl">+ Evaluation / monitoring</span><span class="val amber">+5–10%</span></div>
+                <div class="cheat-row"><span class="lbl">Engineering maintenance</span><span class="val amber">0.25–0.5 FTE</span></div>
+                <div class="cheat-row"><span class="lbl">Recommended total buffer</span><span class="val red">× 1.5 total</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRICING TABLE -->
+    <div id="pricing">
+        <div class="sec-label">2026 Rate Card</div>
+        <div class="sec-header">
+            <h2>Model Pricing Reference</h2>
+            <p>Current market rates for all major models tracked by AICostHub. Rates verified June 2026 — <a href="contact.html">report a discrepancy</a> if you spot one.</p>
+        </div>
+        <div class="pricing-table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th><th>Provider</th><th>Tier</th>
+                        <th>Input / 1M</th><th>Output / 1M</th>
+                        <th>Batch Input</th><th>Batch Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GPT-5.4</td><td>OpenAI</td>
+                        <td><span class="tier-badge tier-f">Frontier</span></td>
+                        <td><span class="mono">$2.50</span></td><td><span class="mono">$15.00</span></td>
+                        <td><span class="mono green">$1.25</span></td><td><span class="mono green">$7.50</span></td>
+                    </tr>
+                    <tr>
+                        <td>Claude 4.6 Sonnet</td><td>Anthropic</td>
+                        <td><span class="tier-badge tier-f">Frontier</span></td>
+                        <td><span class="mono">$3.00</span></td><td><span class="mono">$15.00</span></td>
+                        <td><span class="mono green">$1.50</span></td><td><span class="mono green">$7.50</span></td>
+                    </tr>
+                    <tr>
+                        <td>Gemini 3.1 Pro</td><td>Google</td>
+                        <td><span class="tier-badge tier-m">Mid-Tier</span></td>
+                        <td><span class="mono">$2.00</span></td><td><span class="mono">$12.00</span></td>
+                        <td><span class="mono green">$1.00</span></td><td><span class="mono green">$6.00</span></td>
+                    </tr>
+                    <tr>
+                        <td>GPT-5 Nano</td><td>OpenAI</td>
+                        <td><span class="tier-badge tier-b">Budget</span></td>
+                        <td><span class="mono">$0.05</span></td><td><span class="mono">$0.40</span></td>
+                        <td><span class="mono green">$0.025</span></td><td><span class="mono green">$0.20</span></td>
+                    </tr>
+                    <tr>
+                        <td>DeepSeek V4</td><td>DeepSeek</td>
+                        <td><span class="tier-badge tier-b">Budget</span></td>
+                        <td><span class="mono">$0.28</span></td><td><span class="mono">$0.28</span></td>
+                        <td><span class="mono na">N/A</span></td><td><span class="mono na">N/A</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- GLOSSARY -->
+    <div id="glossary">
+        <div class="sec-label">Terminology</div>
+        <div class="sec-header">
+            <h2>AI Pricing Glossary</h2>
+            <p>Plain-English definitions for every term you'll encounter when working with LLM APIs — from fundamentals to advanced optimization techniques.</p>
+        </div>
+        <div class="glossary-grid">
+            <div class="glossary-item">
+                <div class="glossary-term">Token <span class="term-tag tag-core">Core</span></div>
+                <div class="glossary-def">The fundamental unit of text that language models process and charge for. Roughly 0.75 English words per token on average. All LLM API pricing is denominated in tokens per million — not words or characters.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Input Token <span class="term-tag tag-pricing">Pricing</span></div>
+                <div class="glossary-def">Tokens in your prompt — the system instruction, user message, conversation history, and any context you pass to the model. Input tokens are typically 3–6× cheaper than output tokens because processing text requires less GPU compute than generating it.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Output Token <span class="term-tag tag-pricing">Pricing</span></div>
+                <div class="glossary-def">Tokens generated by the model in its response. Output tokens require one GPU forward pass per token, making them computationally expensive. For generation-heavy workloads, output costs dominate the total bill — often 70–85% of total spend.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Context Window <span class="term-tag tag-core">Core</span></div>
+                <div class="glossary-def">The maximum number of tokens a model can process in a single request, including both input and output. Claude 4.6 Sonnet: 200K tokens. GPT-5.4: 128K tokens. Gemini 3.1 Pro: up to 2 million tokens. Larger windows enable full-document processing without chunking.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Batch Processing <span class="term-tag tag-pricing">Pricing</span></div>
+                <div class="glossary-def">A pricing mode where requests are submitted in bulk and processed within 24 hours instead of real time. Offered by OpenAI and Anthropic at a flat 50% discount on all token costs. Ideal for any non-interactive background workload: pipelines, enrichment, generation at scale.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Prompt Caching <span class="term-tag tag-technique">Technique</span></div>
+                <div class="glossary-def">A feature that caches the beginning of a prompt so it doesn't need to be fully re-processed on every call. Cached tokens are re-billed at approximately 10% of the standard input rate — up to 90% savings on stable, repeated system prompts and context.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">RAG — Retrieval-Augmented Generation <span class="term-tag tag-infra">Infra</span></div>
+                <div class="glossary-def">An architecture where relevant documents are retrieved from a vector database and inserted into context at query time. Dramatically reduces token costs for large knowledge bases compared to inserting the entire corpus — only relevant chunks are sent per request.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Embedding <span class="term-tag tag-infra">Infra</span></div>
+                <div class="glossary-def">A numerical vector representation of text, produced by an embedding model and used for semantic search in RAG pipelines. Priced separately from generation models, typically $0.02–$0.13 per million tokens. Re-embedding costs accumulate as your knowledge base grows and updates.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">System Prompt <span class="term-tag tag-core">Core</span></div>
+                <div class="glossary-def">An instruction block sent before the user's message that sets the model's behavior, persona, and output format. System prompt tokens are billed as input tokens on every call — even when unchanged — making their length a significant ongoing cost driver at high volume.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Few-Shot Prompting <span class="term-tag tag-technique">Technique</span></div>
+                <div class="glossary-def">A prompting strategy that includes example input-output pairs to demonstrate desired behavior. Each example adds 100–300 tokens per request. Use selectively — zero-shot often suffices for well-defined tasks and avoids the compounding token cost of examples included in every call.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">JSON Mode / Structured Output <span class="term-tag tag-technique">Technique</span></div>
+                <div class="glossary-def">A configuration that forces model output to conform to a specific JSON schema. Eliminates format-related retry calls and is slightly more token-efficient than equivalent prose, since it removes transitional language. A best practice for any pipeline requiring machine-readable structured data.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Token-to-Word Ratio <span class="term-tag tag-core">Core</span></div>
+                <div class="glossary-def">The average number of tokens per word for a given content type. English prose: ~1.333 tokens/word. Code: 1.5–2.0 tokens/word. Non-Latin scripts (CJK, Arabic): 2.0–4.0 tokens/word. Getting this ratio right is the foundation of any accurate API cost estimate.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Model Tier <span class="term-tag tag-pricing">Pricing</span></div>
+                <div class="glossary-def">A classification of AI models by capability and cost. Frontier: GPT-5.4, Claude 4.6 Sonnet — maximum quality, premium rates. Mid-tier: Gemini 3.1 Pro — strong balance of quality and cost. Budget: GPT-5 Nano, DeepSeek V4 — optimized for cost-sensitive high-volume tasks, up to 50× cheaper than frontier.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Retry Rate <span class="term-tag tag-infra">Infra</span></div>
+                <div class="glossary-def">The percentage of API calls that fail and must be retried. A 5% retry rate with three retries per failure effectively adds 15% to your token consumption. Tracking retry rate as a KPI surfaces both prompt engineering problems (inconsistent output format) and infrastructure problems (rate limit tier).</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">Rate Limit <span class="term-tag tag-infra">Infra</span></div>
+                <div class="glossary-def">A per-minute or per-day cap on API requests or tokens, set by the provider based on your account tier. Exceeding limits returns a 429 error requiring retry logic. High-volume production deployments must implement queuing, exponential backoff, and request distribution to stay within limits.</div>
+            </div>
+            <div class="glossary-item">
+                <div class="glossary-term">LLM-as-a-Judge <span class="term-tag tag-technique">Technique</span></div>
+                <div class="glossary-def">A quality evaluation approach where one language model scores or critiques the outputs of another. Provides scalable quality assurance without manual review, but incurs token costs proportional to evaluation sample rate and the length of outputs being scored. Factor into true cost-of-ownership calculations.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div id="checklist">
+        <div class="sec-label">Action Plan</div>
+        <div class="sec-header">
+            <h2>AI Cost Optimization Checklist</h2>
+            <p>A prioritized action list for reducing your AI API spend. Check off each item as you implement it.</p>
+        </div>
+        <div class="checklist-wrap">
+            <div class="checklist-card">
+                <h3><span>⚡</span> Quick Wins (Days 1–3)</h3>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Enable Batch Processing</strong> for all non-interactive API calls.<br><span class="check-savings">↓ 50% on eligible traffic</span></div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Audit system prompt length</strong> — every word costs tokens on every single call.<br><span class="check-savings">↓ 10–30% input cost</span></div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Add output length constraints</strong> to all prompts ("respond in under N words").<br><span class="check-savings">↓ 20–35% output cost</span></div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Set budget alerts</strong> at 50%, 75%, 90% of monthly target in provider dashboard.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Switch to JSON output mode</strong> for all structured data extraction tasks.</div>
+                </div>
+            </div>
+            <div class="checklist-card">
+                <h3><span>🔧</span> Infrastructure (Week 1–2)</h3>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Enable prompt caching</strong> for stable system prompts and repeated context.<br><span class="check-savings">↓ 40–60% on cached input tokens</span></div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Implement cost attribution</strong> — tag every API call by team, feature, and use case.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Add intelligent retry logic</strong> with exponential backoff and jitter.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Validate structured outputs</strong> before retrying to avoid duplicate token costs.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Log token usage per request</strong> and track P95 cost as a KPI.</div>
+                </div>
+            </div>
+            <div class="checklist-card">
+                <h3><span>📐</span> Architecture (Weeks 2–4)</h3>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Implement model tiering</strong> — route classification and extraction to budget models.<br><span class="check-savings">↓ 40–55% on routed traffic</span></div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Evaluate RAG vs. long-context</strong> insertion for knowledge-base applications.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Build a batch job queue</strong> for all background and scheduled AI processing.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Evaluate fine-tuning</strong> a smaller model on your specific task to replace a frontier model.</div>
+                </div>
+            </div>
+            <div class="checklist-card">
+                <h3><span>🔄</span> Ongoing Maintenance</h3>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Quarterly prompt audits</strong> — compress, remove redundancy, update examples.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Monitor new model releases</strong> — providers frequently cut prices on new model generations.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Track retry rate as a KPI</strong> — above 2% signals a prompt engineering or infrastructure issue.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Re-evaluate model tier assignments</strong> as budget model capabilities improve each quarter.</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+                    <div class="check-text"><strong>Compare budgeted vs. actual spend</strong> monthly — variance signals hidden waste to investigate.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROVIDER LINKS -->
+    <div id="providers">
+        <div class="sec-label">Official Sources</div>
+        <div class="sec-header">
+            <h2>Official Provider Pricing Pages</h2>
+            <p>Always verify current rates on each provider's official documentation before making large budget commitments. AI pricing changes frequently — sometimes multiple times per quarter — and our calculator is updated to match.</p>
+        </div>
+        <div class="provider-grid">
+            <a href="https://openai.com/api/pricing" target="_blank" rel="noopener" class="provider-card">
+                <div class="provider-icon pi-openai">🤖</div>
+                <div class="provider-name">OpenAI</div>
+                <div class="provider-desc">GPT-5.4, GPT-5 Nano, o3, GPT-4o — full model pricing</div>
+                <div class="provider-link-label">openai.com/api/pricing →</div>
+            </a>
+            <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener" class="provider-card">
+                <div class="provider-icon pi-anthropic">✦</div>
+                <div class="provider-name">Anthropic</div>
+                <div class="provider-desc">Claude 4.6 Sonnet & Opus — rates and batch pricing</div>
+                <div class="provider-link-label">anthropic.com/pricing →</div>
+            </a>
+            <a href="https://cloud.google.com/vertex-ai/generative-ai/pricing" target="_blank" rel="noopener" class="provider-card">
+                <div class="provider-icon pi-google">🔵</div>
+                <div class="provider-name">Google</div>
+                <div class="provider-desc">Gemini 3.1 Pro and Flash — Vertex AI pricing</div>
+                <div class="provider-link-label">cloud.google.com →</div>
+            </a>
+            <a href="https://platform.deepseek.com/api-docs/pricing" target="_blank" rel="noopener" class="provider-card">
+                <div class="provider-icon pi-deepseek">🌊</div>
+                <div class="provider-name">DeepSeek</div>
+                <div class="provider-desc">DeepSeek V4 — industry-leading budget model rates</div>
+                <div class="provider-link-label">platform.deepseek.com →</div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="/" class="logo-f"><span class="logo-dot"></span> AICostHub</a>
+            <p>Transparent AI cost analysis for developers, founders, and enterprise teams.</p>
+        </div>
+        <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="/">Cost Calculator</a>
+            <a href="articles.html">Articles</a>
+            <a href="resources.html">Resources</a>
+        </div>
+        <div class="footer-col">
+            <h5>Company</h5>
+            <a href="about.html">About the Project</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 AICostHub Analysis Tool</span>
+        <span>For informational purposes only</span>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -3,383 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About AICostHub – Mission, Methodology & Privacy‑First Design</title>
-    <meta name="description" content="AICostHub provides transparent AI API cost estimation. Learn about our methodology, token calculation, privacy guarantees, and the team behind the tool.">
-    <meta name="keywords" content="about AI cost tool, AI pricing methodology, token calculation, privacy-first AI tool">
-    <link rel="canonical" href="https://ai-cost-hub.vercel.app/about.html">
-    <meta property="og:title" content="About AICostHub – Transparent AI Cost Analysis">
-    <meta property="og:description" content="We help developers and startups compare LLM API costs with real-time token pricing, batch discounts, and human labor comparisons.">
-    <meta name="twitter:card" content="summary">
-    <meta name="google-adsense-account" content="ca-pub-3911589843029291">
+    <title>About AICostHub — Team, Mission & Methodology | 2026</title>
+    <meta name="description" content="Learn about AICostHub's mission to bring transparency to AI API pricing in 2026. Meet the team, understand our calculation methodology, and get answers to frequently asked questions about AI token pricing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         :root {
-            --bg:        #080C14;
-            --surface:   #0F1623;
-            --surface2:  #161E2E;
-            --border:    rgba(255,255,255,0.07);
-            --border2:   rgba(255,255,255,0.12);
-            --text:      #E8EDF5;
-            --muted:     #6B7A99;
-            --accent:    #3B82F6;
-            --accent2:   #60A5FA;
-            --green:     #10B981;
-            --amber:     #F59E0B;
+            --bg: #080C14; --surface: #0F1623; --surface2: #161E2E;
+            --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+            --text: #E8EDF5; --muted: #6B7A99;
+            --accent: #3B82F6; --accent2: #60A5FA; --green: #10B981;
+            --amber: #F59E0B; --purple: #8B5CF6;
         }
+        body { background: var(--bg); color: var(--text); font-family: 'Sora', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
 
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Sora', sans-serif;
-            font-size: 14px;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 32px;
-            height: 64px;
-            border-bottom: 1px solid var(--border);
-            background: rgba(8,12,20,0.9);
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo {
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 32px; height: 64px; border-bottom: 1px solid var(--border); background: rgba(8,12,20,0.9); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; box-shadow: 0 0 10px var(--accent); }
-        nav a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            padding: 6px 14px;
-            border-radius: 6px;
-            transition: all 0.2s;
-        }
+        nav a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 6px; transition: all 0.2s; }
         nav a:hover { color: var(--text); background: var(--surface2); }
         nav a.active { color: var(--accent2); background: var(--surface2); }
 
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 48px 32px 36px;
-        }
-        .footer-inner {
-            max-width: 780px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr auto auto auto;
-            gap: 40px;
-            align-items: start;
-            margin-bottom: 36px;
-        }
-        .footer-brand .logo-f {
-            font-size: 16px; font-weight: 700; color: var(--text);
-            display: flex; align-items: center; gap: 8px;
-            margin-bottom: 10px; text-decoration: none;
-        }
+        .page-header { padding: 60px 32px 52px; border-bottom: 1px solid var(--border); text-align: center; position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 600px; height: 280px; background: radial-gradient(ellipse, rgba(59,130,246,0.1) 0%, transparent 70%); pointer-events: none; }
+        .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 14px; }
+        .page-header h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -1.2px; margin-bottom: 16px; line-height: 1.15; }
+        .page-header p { color: var(--muted); font-size: 15px; max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+        .content { max-width: 820px; margin: 0 auto; padding: 60px 24px 80px; display: flex; flex-direction: column; gap: 56px; }
+
+        .sec-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+        .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        .content h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px; }
+        .content p { color: var(--muted); font-size: 14px; line-height: 1.85; margin-bottom: 14px; }
+        .content p:last-child { margin-bottom: 0; }
+        .content strong { color: var(--text); font-weight: 600; }
+
+        .mission-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+        .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; text-align: center; }
+        .stat-box .num { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; color: var(--accent2); display: block; margin-bottom: 6px; }
+        .stat-box .label { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+        .method-steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+        .method-step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; display: grid; grid-template-columns: 40px 1fr; gap: 18px; align-items: start; }
+        .step-num { width: 40px; height: 40px; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: var(--accent2); flex-shrink: 0; }
+        .step-body h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+        .step-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+        .team-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 24px; }
+        .team-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; text-align: center; }
+        .team-avatar { width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: white; }
+        .av-blue { background: linear-gradient(135deg, #3B82F6, #8B5CF6); }
+        .av-green { background: linear-gradient(135deg, #10B981, #3B82F6); }
+        .av-amber { background: linear-gradient(135deg, #F59E0B, #EF4444); }
+        .team-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .team-card .role { font-size: 12px; color: var(--accent2); font-weight: 600; margin-bottom: 10px; }
+        .team-card p { font-size: 12px; color: var(--muted); line-height: 1.65; }
+        .team-location { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); margin-top: 10px; }
+
+        .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .value-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+        .value-icon { font-size: 22px; margin-bottom: 10px; }
+        .value-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .value-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+        .feature-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+        .feature-icon { font-size: 20px; margin-bottom: 10px; }
+        .feature-item h4 { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+        .feature-item p { font-size: 12px; color: var(--muted); line-height: 1.6; margin: 0; }
+
+        .faq-list { display: flex; flex-direction: column; gap: 4px; }
+        .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+        .faq-q { padding: 18px 22px; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: background 0.2s; user-select: none; }
+        .faq-q:hover { background: var(--surface2); }
+        .faq-chevron { color: var(--muted); font-size: 16px; transition: transform 0.25s; flex-shrink: 0; }
+        .faq-a { display: none; padding: 16px 22px 18px; font-size: 13px; color: var(--muted); line-height: 1.8; border-top: 1px solid var(--border); }
+        .faq-a strong { color: var(--text); font-weight: 600; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-q { background: var(--surface2); }
+
+        .contact-card { background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 28px 30px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .contact-card div h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .contact-card div p { font-size: 13px; color: var(--muted); margin: 0; }
+        .contact-link { flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; background: var(--surface2); border: 1px solid var(--border2); color: var(--accent2); text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 8px; transition: all 0.2s; font-family: 'JetBrains Mono', monospace; }
+        .contact-link:hover { background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3); }
+
+        footer { border-top: 1px solid var(--border); padding: 48px 32px 36px; }
+        .footer-inner { max-width: 820px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto auto; gap: 40px; align-items: start; margin-bottom: 36px; }
+        .footer-brand .logo-f { font-size: 16px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; text-decoration: none; }
         .footer-brand p { font-size: 12px; color: var(--muted); max-width: 200px; line-height: 1.65; }
-        .footer-col h5 {
-            font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-            text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
-        }
-        .footer-col a {
-            display: block; color: rgba(255,255,255,0.45); text-decoration: none;
-            font-size: 13px; margin-bottom: 10px; transition: color 0.2s;
-        }
+        .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
         .footer-col a:hover { color: var(--text); }
-        .footer-bottom {
-            max-width: 780px; margin: 0 auto;
-            border-top: 1px solid var(--border); padding-top: 24px;
-            display: flex; justify-content: space-between;
-            font-size: 12px; color: rgba(255,255,255,0.2);
-        }
+        .footer-bottom { max-width: 820px; margin: 0 auto; border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.2); }
 
-        .page-header {
-            border-bottom: 1px solid var(--border);
-            padding: 56px 32px 48px;
-            max-width: 780px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-        }
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: -40px; left: 50%; transform: translateX(-50%);
-            width: 500px; height: 200px;
-            background: radial-gradient(ellipse, rgba(59,130,246,0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .page-eyebrow {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent2);
-            margin-bottom: 16px;
-        }
-        .page-header h1 {
-            font-size: clamp(26px, 4vw, 40px);
-            font-weight: 700;
-            letter-spacing: -1px;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-        .page-header p {
-            color: var(--muted);
-            font-size: 15px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .content {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 56px 32px 80px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent2);
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-label::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        .content h2 {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.4px;
-            margin-bottom: 14px;
-            color: var(--text);
-        }
-        .content p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.85;
-        }
-        .content strong {
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .highlight-card {
-            background: rgba(59,130,246,0.06);
-            border: 1px solid rgba(59,130,246,0.18);
-            border-radius: 14px;
-            padding: 28px 30px;
-        }
-        .highlight-card .hc-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--accent2);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .highlight-card .hc-label::before {
-            content: '◈';
-            font-size: 14px;
-        }
-        .highlight-card p {
-            color: rgba(224,235,255,0.7);
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        .feature-item {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 22px;
-        }
-        .feature-icon {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .feature-item h4 {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-        .feature-item p {
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        .contact-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-        }
-        .contact-card div:first-child h4 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .contact-card div:first-child p {
-            font-size: 13px;
-            color: var(--muted);
-        }
-        .contact-link {
-            flex-shrink: 0;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--surface2);
-            border: 1px solid var(--border2);
-            color: var(--accent2);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 10px 18px;
-            border-radius: 8px;
-            transition: all 0.2s;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .contact-link:hover {
-            background: rgba(59,130,246,0.12);
-            border-color: rgba(59,130,246,0.3);
-        }
-
-        @media (max-width: 600px) {
-            .feature-grid { grid-template-columns: 1fr; }
+        @media (max-width: 680px) {
+            .team-grid { grid-template-columns: 1fr; }
+            .values-grid, .feature-grid { grid-template-columns: 1fr; }
+            .mission-stats { grid-template-columns: 1fr 1fr; }
             .contact-card { flex-direction: column; align-items: flex-start; }
-            .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .method-step { grid-template-columns: 1fr; }
         }
     </style>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "name": "About AICostHub",
-            "description": "AICostHub provides transparent AI API cost estimation. Learn about our methodology, token calculation, privacy guarantees.",
-            "url": "https://ai-cost-hub.vercel.app/about.html"
-        }
-    </script>
 </head>
 <body>
 
-    <nav>
-        <div class="logo"><span class="logo-dot"></span> AICostHub</div>
-        <div style="display:flex; gap:4px;">
-            <a href="/">Calculator</a>
+<nav>
+    <a href="index.html" class="logo"><span class="logo-dot"></span> AICostHub</a>
+    <div style="display:flex; gap:4px;">
+        <a href="index.html">Calculator</a>
+        <a href="articles.html">Articles</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html" class="active">About</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="eyebrow">About AICostHub</div>
+    <h1>Built for Builders in the AI Economy</h1>
+    <p>A transparent, privacy-first cost analysis tool for developers, startup founders, and enterprise architects navigating the economics of large language models in 2026.</p>
+</div>
+
+<div class="content">
+
+    <!-- MISSION -->
+    <div>
+        <div class="sec-label">Our Mission</div>
+        <h2>Solving the Complexity of AI Cost</h2>
+        <p>AICostHub was born from a frustration shared by thousands of developers and founders: understanding what you'll actually pay to run an AI-powered application is surprisingly hard. Provider pricing pages list rates per million tokens, but most stakeholders think in words and requests, not tokens. Budget forecasts require translating accurately between these two worlds — and getting it wrong means either overbuilding (wasting money) or underbuilding (getting surprised by a bill you didn't anticipate).</p>
+        <p>We built AICostHub to be the tool we wished had existed when we started our own AI-powered projects. <strong>Our mission is simple:</strong> give developers, founders, and enterprise architects a clear, honest, and instantly usable window into what large language model deployment actually costs — across every major provider, in real-world units, with no sign-up required.</p>
+        <p>As of 2026, the AI landscape has matured past the discovery phase. Companies are no longer asking "could we use AI for this?" — they're asking "how much will it cost and is the ROI there?" We exist to answer that second question with precision and transparency.</p>
+
+        <div class="mission-stats">
+            <div class="stat-box"><span class="num">5</span><span class="label">Major providers tracked</span></div>
+            <div class="stat-box"><span class="num">100%</span><span class="label">Client-side — no data sent to servers</span></div>
+            <div class="stat-box"><span class="num">Free</span><span class="label">No account, no paywall, ever</span></div>
+        </div>
+    </div>
+
+    <!-- METHODOLOGY -->
+    <div>
+        <div class="sec-label">How We Calculate</div>
+        <h2>Our Methodology, Explained</h2>
+        <p>Every number in the AICostHub calculator is grounded in a documented methodology designed to reflect real-world usage accurately. Here's exactly how each step of our calculation works:</p>
+
+        <div class="method-steps">
+            <div class="method-step">
+                <div class="step-num">01</div>
+                <div class="step-body">
+                    <h4>Token-to-Word Conversion — Ratio: 1.333</h4>
+                    <p>We apply the industry-standard Weighted Average Token-to-Word Ratio of 1.333 to convert word counts into tokens. This means 1,000 words ≈ 1,333 tokens. The ratio accounts for the fact that short common words often tokenize as one token while longer words split into multiple tokens, giving a realistic estimate for general English-language use across different content types.</p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">02</div>
+                <div class="step-body">
+                    <h4>Output Length Assumption — 1.5× Input Length</h4>
+                    <p>We model output tokens as 1.5× the input token count, reflecting the observed average ratio in production applications where models typically generate roughly 50% more content than the input. For classification-heavy workloads this overestimates output; for long-form generation it may underestimate. Adjust your words-per-prompt input to calibrate for your task type.</p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">03</div>
+                <div class="step-body">
+                    <h4>Provider Rate Sourcing — Manually Verified</h4>
+                    <p>We manually verify token pricing against each provider's official pricing page on a regular basis and update within 24–48 hours of any announced change. All rates are denominated in USD per million tokens. We track input and output rates separately because the asymmetry between them (output is typically 3–6× more expensive) is critical to accurate cost modeling.</p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">04</div>
+                <div class="step-body">
+                    <h4>Batch Processing Discount — 50% Off</h4>
+                    <p>When the Batch toggle is enabled, we apply a 50% discount to both input and output rates for supported providers (OpenAI and Anthropic). DeepSeek V4 does not offer a batch discount through its API as of mid-2026 and is excluded from the batch calculation. Batch pricing reflects published Batch API and Message Batches API rates.</p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="step-num">05</div>
+                <div class="step-body">
+                    <h4>Human Labor Comparison — $35/hr at 800 words/hr</h4>
+                    <p>Our human baseline uses a 2026 figure of $35/hour for knowledge worker labor at 800 words/hour output efficiency — a conservative midpoint across entry-to-mid-level content and operations roles in the United States. The comparison is illustrative, meant to contextualize AI costs against a familiar benchmark, not as a precise workforce planning tool.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEAM -->
+    <div>
+        <div class="sec-label">The Team</div>
+        <h2>Who We Are</h2>
+        <p>AICostHub was built by a small distributed team with backgrounds spanning cloud infrastructure, machine learning platform engineering, and AI systems research. We've all worked at companies that burned unnecessary budget on AI infrastructure before learning to optimize it — and we built the tool we wished we'd had.</p>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar av-blue">MR</div>
+                <h4>Marcus Reid</h4>
+                <div class="role">Co-Founder · Infrastructure</div>
+                <p>9 years building cloud cost optimization tooling. Previously led FinOps engineering at two Series B SaaS companies. Obsessed with the intersection of AI infrastructure and unit economics.</p>
+                <div class="team-location">📍 Austin, TX</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar av-green">SK</div>
+                <h4>Sophia Kamau</h4>
+                <div class="role">Co-Founder · ML Platform</div>
+                <p>Former ML Solutions Engineer at Google Cloud. Spent three years helping enterprise customers architect cost-efficient Vertex AI deployments. Expert in LLM evaluation and benchmark methodology.</p>
+                <div class="team-location">📍 Nairobi, Kenya</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar av-amber">JL</div>
+                <h4>James Lauer</h4>
+                <div class="role">Research & Content Lead</div>
+                <p>AI systems researcher with a background in NLP and production LLM deployment. Leads our benchmark testing, model evaluation, and the AICostHub articles and analysis reports.</p>
+                <div class="team-location">📍 Berlin, Germany</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VALUES -->
+    <div>
+        <div class="sec-label">What We Believe</div>
+        <h2>Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🔍</div>
+                <h4>Radical Transparency</h4>
+                <p>We show our math. Every calculation uses documented assumptions publicly explained on this page. We don't obscure methodology or present numbers without context.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⚡</div>
+                <h4>Practical Over Perfect</h4>
+                <p>A good estimate you can get in 30 seconds is worth more than a perfect estimate requiring a spreadsheet and an hour. We optimize for speed and actionability.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h4>Privacy by Default</h4>
+                <p>Your business data — volumes, budgets, configurations — is yours alone. AICostHub runs entirely in your browser so sensitive information never touches our servers.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌍</div>
+                <h4>Accessible to Everyone</h4>
+                <p>The AI cost information gap disproportionately affects founders without finance teams. AICostHub is and will remain free, with no paywalled features, ever.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIVACY -->
+    <div>
+        <div class="sec-label">Privacy & Data</div>
+        <h2>Your Data Never Leaves the Browser</h2>
+        <p>All calculations in AICostHub are performed client-side using JavaScript. Your usage estimates, request volumes, and cost configurations are never transmitted to our servers, never stored, and never shared with third parties.</p>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🔒</div>
+                <h4>No Server Storage</h4>
+                <p>Usage estimates and API configurations are never transmitted or stored on any server.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h4>Client-Side Only</h4>
+                <p>All calculations run locally via JavaScript. No backend, no database, no cloud function.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <h4>No Behavioral Tracking</h4>
+                <p>We don't track keystrokes, form inputs, or individual usage patterns. Your strategy stays private.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✦</div>
+                <h4>Always Free, No Account</h4>
+                <p>No login, no email, no account required. Open the tool and start calculating immediately.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div>
+        <div class="sec-label">Frequently Asked Questions</div>
+        <h2>Questions & Answers</h2>
+        <p style="margin-bottom: 24px;">Everything you've wondered about AI API pricing, our calculator, and how to apply these estimates to your own project.</p>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">What is a token and why does it matter for pricing?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">A token is the fundamental unit of text that language models process. Roughly speaking, one token equals about 0.75 words in English — so 100 words is approximately 133 tokens. All AI provider pricing is denominated in tokens per million (e.g., "$3.00 per million input tokens"). Understanding the word-to-token conversion is essential for translating real-world usage into actual cost estimates. Our calculator handles this conversion automatically using a standard ratio of 1.333 tokens per word.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Why are output tokens more expensive than input tokens?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">Generating new text requires significantly more GPU computation than processing existing text. When a model processes your input, it runs a single forward pass through its neural network. When it generates output, it runs a separate forward pass <em>for each token generated</em> — so a 500-token response requires 500 sequential passes. This is computationally expensive and explains why output token rates are typically 3–6× higher than input rates. For most applications, output costs dominate the total bill, especially for generation-heavy tasks.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">How accurate are AICostHub's estimates?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">Our estimates are designed to be <strong>realistic approximations</strong>, not exact figures. The 1.333 token-to-word ratio holds well for typical English-language business content, but actual costs may differ based on content type (code and non-Latin scripts tokenize differently), output verbosity (your tasks may produce shorter or longer outputs than our 1.5× assumption), system prompt size (we don't include it in the base calculation), and retry rates. Use our estimates for budget planning and provider comparison, then monitor actual usage via your provider's dashboard to calibrate.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Does Batch Processing really produce the same quality output?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">Yes — the Batch API runs the exact same model as real-time requests. GPT-5.4, Claude 4.6 Sonnet, and other supported models produce identical output quality regardless of whether the request was submitted synchronously or as part of a batch job. The 50% discount reflects the value to providers of predictable, schedulable workloads that can be processed during off-peak hours — not any reduction in compute quality. The only trade-off is receiving results within 24 hours instead of milliseconds.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">How often are provider prices updated on this site?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">We review and update model pricing whenever a provider announces a change, typically within 24–48 hours of any official announcement. AI provider pricing has been highly dynamic in 2025–2026, with several major providers cutting rates multiple times as GPU costs decline. We recommend verifying current rates on providers' official pricing pages before making large budgetary commitments. Links to all official pricing pages are available on our <a href="resources.html" style="color:var(--accent2);">Resources page</a>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Which model should I use for my project?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">It depends heavily on your use case. As a general framework: use <strong>GPT-5 Nano or DeepSeek V4</strong> for high-volume, low-complexity tasks like classification, tagging, and extraction — they're 30–50× cheaper than frontier models and perform comparably on well-defined tasks. Use <strong>Claude 4.6 Sonnet or GPT-5.4</strong> for complex reasoning, nuanced generation, and customer-facing content. Use <strong>Gemini 3.1 Pro</strong> if you need a context window exceeding 200K tokens or multimodal capability. Read our <a href="articles.html" style="color:var(--accent2);">comparison articles</a> for deeper analysis.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Is AICostHub affiliated with any AI provider?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">No. AICostHub is an independent project with no commercial relationship, partnership, or affiliation with any AI provider including OpenAI, Anthropic, Google, or DeepSeek. We do not receive compensation from any provider for featuring their models, and our cost comparisons are not influenced by any commercial arrangement. Our goal is to provide unbiased, accurate pricing information so users can make informed decisions.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">I found a pricing error. How do I report it?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">We genuinely appreciate pricing corrections — they're the most important quality signal we receive. If you've spotted a rate that doesn't match a provider's official page, please email us at <a href="mailto:contact@aicosthub.com" style="color:var(--accent2);">contact@aicosthub.com</a> with the model name, the rate you found on our site, the correct rate, and a link to the source. We verify and update within 24 hours of receiving a confirmed correction.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Why does the Human vs. AI comparison use $35/hour?<span class="faq-chevron">▾</span></div>
+                <div class="faq-a">$35/hour represents a conservative 2026 midpoint for knowledge worker labor — roughly the blended rate for entry-to-mid-level content, data, and operations roles when factoring in salary, employer taxes, benefits, and overhead. We use 800 words/hour as a realistic output rate for focused knowledge work. The comparison is intentionally illustrative rather than precise — its goal is to provide a familiar reference point that contextualizes AI token costs against a human labor baseline most stakeholders can intuitively evaluate.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div>
+        <div class="sec-label">Get in Touch</div>
+        <div class="contact-card">
+            <div>
+                <h4>Questions or Feedback?</h4>
+                <p>Pricing corrections, feature suggestions, or press inquiries — we read everything.</p>
+            </div>
+            <a href="mailto:contact@aicosthub.com" class="contact-link">contact@aicosthub.com →</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="index.html" class="logo-f"><span class="logo-dot"></span> AICostHub</a>
+            <p>Transparent AI cost analysis for developers, founders, and enterprise teams.</p>
+        </div>
+        <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="index.html">Cost Calculator</a>
             <a href="articles.html">Articles</a>
-            <a href="about.html" class="active">About</a>
+            <a href="resources.html">Resources</a>
         </div>
-    </nav>
-
-    <div class="page-header">
-        <div class="page-eyebrow">About the Project</div>
-        <h1>Built for Builders in the AI Economy</h1>
-        <p>A transparent, privacy-first cost analysis tool for developers, founders, and enterprise architects.</p>
-    </div>
-
-    <div class="content">
-        <div>
-            <div class="section-label">Mission</div>
-            <h2>Solving AI Cost Complexity</h2>
-            <p>Welcome to AICostHub — a dedicated analysis tool built to solve the complexity of the modern AI economy. As of 2026, the landscape of Artificial Intelligence has shifted from "discovery" to "operational efficiency." Our mission is to provide developers, startup founders, and enterprise architects with <strong>transparent, real-time data</strong> on the true costs of model deployment.</p>
+        <div class="footer-col">
+            <h5>Company</h5>
+            <a href="about.html">About the Project</a>
+            <a href="contact.html">Contact Us</a>
         </div>
-
-        <div>
-            <div class="section-label">Methodology</div>
-            <h2>How We Calculate</h2>
-            <p>We track the fluctuating token prices of major providers including OpenAI, Anthropic, Google, and DeepSeek. Our calculator uses a <strong>Weighted Average Token-to-Word Ratio (1.333)</strong> to ensure that business users get a realistic estimate of their monthly burn rate, rather than just a theoretical price-per-token.</p>
-        </div>
-
-        <div class="highlight-card">
-            <div class="hc-label">The Human Element</div>
-            <p>We believe that AI should be viewed as an efficiency multiplier. By including our "Compare to Human" feature, we aim to provide a clear financial visualization of the ROI that automated workflows offer compared to traditional manual labor — giving decision-makers the data they need to act confidently.</p>
-        </div>
-
-        <div>
-            <div class="section-label">Privacy & Data</div>
-            <h2>Your Data Never Leaves the Browser</h2>
-            <div class="feature-grid">
-                <div class="feature-item"><div class="feature-icon">🔒</div><h4>No Server Storage</h4><p>Usage estimates and API configurations are never transmitted or stored.</p></div>
-                <div class="feature-item"><div class="feature-icon">⚡</div><h4>Client-Side Only</h4><p>All calculations run locally via JavaScript — no backend required.</p></div>
-                <div class="feature-item"><div class="feature-icon">🛡️</div><h4>No Tracking</h4><p>Business strategy and volume data remain strictly private to you.</p></div>
-                <div class="feature-item"><div class="feature-icon">✦</div><h4>Always Free</h4><p>This tool is offered free of charge with no account required.</p></div>
-            </div>
-        </div>
-
-        <div>
-            <div class="section-label">Contact</div>
-            <div class="contact-card">
-                <div><h4>Questions or Feedback?</h4><p>Spotted a pricing discrepancy or have a suggestion? Reach out.</p></div>
-                <a href="mailto:contact@aicosthub.com" class="contact-link">contact@aicosthub.com →</a>
-            </div>
+        <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="privacy.html">Privacy Policy</a>
         </div>
     </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 AICostHub Analysis Tool</span>
+        <span>For informational purposes only</span>
+    </div>
+</footer>
 
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <a href="/" class="logo-f"><span class="logo-dot"></span> AICostHub</a>
-                <p>Transparent AI cost analysis for developers, founders, and enterprise teams.</p>
-            </div>
-            <div class="footer-col">
-                <h5>Tools</h5>
-                <a href="/">Cost Calculator</a>
-                <a href="articles.html">Articles</a>
-            </div>
-            <div class="footer-col">
-                <h5>Company</h5>
-                <a href="about.html">About the Project</a>
-                <a href="contact.html">Contact Us</a>
-            </div>
-            <div class="footer-col">
-                <h5>Legal</h5>
-                <a href="privacy.html">Privacy Policy</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 AICostHub Analysis Tool</span>
-            <span>For informational purposes only</span>
-        </div>
-    </footer>
+<script>
+    function toggleFaq(el) {
+        el.parentElement.classList.toggle('open');
+    }
+</script>
 
 </body>
 </html>

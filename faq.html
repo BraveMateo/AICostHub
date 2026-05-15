@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | AICostHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --bg: #080C14; --surface: #0F1623; --surface2: #161E2E; --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12); --text: #E8EDF5; --muted: #6B7A99; --accent: #3B82F6; --accent2: #60A5FA; --green: #10B981; }
+        body { background: var(--bg); color: var(--text); font-family: 'Sora', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 32px; height: 64px; border-bottom: 1px solid var(--border); background: rgba(8,12,20,0.9); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; box-shadow: 0 0 10px var(--accent); }
+        nav a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 6px; transition: all 0.2s; }
+        nav a:hover { color: var(--text); background: var(--surface2); }
+        nav a.active { color: var(--accent2); background: var(--surface2); }
+
+        .page-header { padding: 56px 32px 48px; border-bottom: 1px solid var(--border); text-align: center; }
+        .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 12px; }
+        .page-header h1 { font-size: clamp(26px, 4vw, 40px); font-weight: 700; letter-spacing: -1px; margin-bottom: 14px; }
+        .page-header p { color: var(--muted); font-size: 15px; }
+
+        .faq-wrap { max-width: 820px; margin: 0 auto; padding: 56px 24px 80px; }
+        .faq-category { margin-bottom: 48px; }
+        .faq-category h2 { font-size: 20px; font-weight: 700; letter-spacing: -0.4px; margin-bottom: 20px; color: var(--text); }
+
+        .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .faq-question { padding: 18px 22px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+        .faq-question:hover { background: var(--surface2); }
+        .faq-question h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 0; }
+        .faq-toggle { color: var(--accent2); font-size: 20px; transition: transform 0.3s; }
+        .faq-answer { padding: 0 22px 20px; color: var(--muted); font-size: 14px; line-height: 1.85; display: none; }
+        .faq-answer.open { display: block; }
+        .faq-item.open .faq-toggle { transform: rotate(45deg); }
+        .faq-answer strong { color: var(--text); font-weight: 600; }
+        .faq-answer code { background: var(--surface2); border: 1px solid var(--border2); padding: 2px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent2); }
+
+        footer { border-top: 1px solid var(--border); padding: 48px 32px 36px; }
+        .footer-inner { max-width: 820px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto auto auto; gap: 32px; align-items: start; margin-bottom: 36px; }
+        .footer-brand .logo-f { font-size: 16px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; text-decoration: none; }
+        .footer-brand p { font-size: 12px; color: var(--muted); max-width: 180px; line-height: 1.65; }
+        .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--text); }
+        .footer-bottom { max-width: 820px; margin: 0 auto; border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo"><span class="logo-dot"></span> AICostHub</a>
+        <div style="display:flex; gap:4px;">
+            <a href="index.html">Calculator</a>
+            <a href="articles.html">Articles</a>
+            <a href="faq.html" class="active">FAQ</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="eyebrow">Support</div>
+        <h1>Frequently Asked Questions</h1>
+        <p>Real questions from developers trying to figure out AI pricing.</p>
+    </div>
+
+    <div class="faq-wrap">
+
+        <div class="faq-category">
+            <h2>Basics & Getting Started</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>What exactly is a "token" and why does it matter?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    A token is a chunk of text that the AI model processes. It's not exactly a word — think of it more like a syllable or character cluster. On average, <strong>1 token ≈ 0.75 words</strong>, so 100 words = roughly 133 tokens. AI providers charge per million tokens, not per word or request. If you send a 500-word prompt and get back a 300-word response, you just burned ~1,065 tokens. Multiply that by thousands of requests and it adds up fast. Understanding tokens is the single most important thing for controlling costs.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>I'm just starting out. Should I even worry about costs yet?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Honestly? If you're doing under 1,000 requests a month, your bill will be under $5-10 — not worth overthinking. But the moment you hit product-market fit and scale to 10K+ requests, costs become real. A friend of mine went from $20/month to $2,400/month in two weeks after launching on Product Hunt. Plan ahead. At minimum, set up billing alerts and understand the batch API before you need it.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>How do I calculate my monthly token usage?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Use this formula: <strong>(monthly requests) × (avg words per prompt) × 1.33 = input tokens</strong>. Then estimate your output tokens (usually 0.5x to 2x your input, depending on the task). Plug those into our calculator above. Example: 10,000 requests, 500 words per prompt = 6.65M input tokens. If outputs average 300 words each, that's 4M output tokens. At GPT-5.4 pricing, that's $16.63 (input) + $60 (output) = ~$77/month.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category">
+            <h2>Pricing & Models</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Why are output tokens so much more expensive than input?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Generating new text requires way more compute than reading existing text. When the model processes your prompt (input), it's just running inference on pre-trained weights — relatively cheap. When it generates a response (output), it has to predict the next token thousands of times in sequence, which is computationally intensive. That's why output is usually 3-6x more expensive. For GPT-5.4: input is $2.50/M, output is $15/M — a 6x difference.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Is DeepSeek actually good or just cheap?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    DeepSeek V4 is legitimately capable for a ton of use cases — classification, extraction, simple summarization, translation, basic Q&A. It's not going to match GPT-5 or Claude 4.6 on complex reasoning or creative writing, but at $0.28 per million tokens (both input and output), it's a no-brainer for high-volume, straightforward tasks. I use it for tagging support tickets and it works perfectly. Don't use it for mission-critical analysis, but for volume work? Absolutely.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Do API prices ever go down, or just up?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    They actually go down surprisingly often. OpenAI cut GPT-4 Turbo prices by 50% in 2024. Anthropic dropped Claude 3.5 Sonnet pricing multiple times. As compute gets cheaper and models get more efficient, providers compete on price. That said, the newest flagship models (like GPT-5.4 or Claude 4.6) tend to launch expensive and drop over 6-12 months. If cost matters more than having the absolute latest model, wait a few months after launch.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Are there any truly free AI APIs?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Nothing powerful is free at scale, but most providers have free tiers for testing. OpenAI gives new accounts $5 in credits. Anthropic gives $5. Google's Gemini has a generous free tier for low-volume use (15 requests per minute). These are fine for prototyping, but once you hit production traffic, you'll need a paid account. Don't build a business on free tiers — they can disappear or get rate-limited without warning.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category">
+            <h2>Batch Processing</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>What's the catch with the 50% batch discount?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    The only catch is time. Your requests get queued and processed within 24 hours instead of instantly. That's it. Same model, same quality, same outputs — just delivered hours later instead of seconds later. If your use case doesn't need real-time results (content generation, data processing, nightly jobs), there's literally no downside. I moved 80% of my workload to batch and cut my OpenAI bill from $1,200 to $640/month.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Can I mix batch and real-time API calls in the same app?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. That's the ideal setup. Use real-time API for anything user-facing (chat, live autocomplete, interactive features), and batch API for background tasks (content pipelines, data enrichment, scheduled reports). Most production apps run a hybrid architecture. The batch API is just a different endpoint — your prompts stay exactly the same.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>How long does a batch job actually take to complete?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    In practice, most batches finish in 2-8 hours, not the full 24. OpenAI and Anthropic process batches continuously and return results as soon as they're done. I've had small batches (under 1,000 requests) finish in under an hour. Large batches (50K requests) might take 10-12 hours. You get a webhook or can poll the status endpoint to know when it's ready.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category">
+            <h2>Cost Optimization</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>What's the single biggest mistake people make with LLM costs?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Using the biggest, most expensive model for everything. I see developers defaulting to GPT-5.4 or Claude 4.6 Sonnet for tasks that GPT-5 Nano or DeepSeek could handle perfectly. It's like renting a Ferrari to drive to the grocery store. Match the model to the task. Classification? Use Nano. Creative writing? Use Sonnet. Simple extraction? Use DeepSeek. You'll cut costs by 80-95% on half your workload.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>How can I reduce output token costs specifically?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Ask for shorter responses. Seriously. Add "Be concise" or "Limit response to 100 words" to your system prompt. Use structured outputs (JSON) instead of prose when possible — JSON is way more token-efficient than natural language. If you're generating content, generate outlines first, then expand only what you need. And always set <code>max_tokens</code> limits so the model can't run wild.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Should I cache prompts to save money?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, but be strategic. If you're sending the same prompt repeatedly (like a fixed system prompt or few-shot examples), use prompt caching (Anthropic offers this, OpenAI has similar features coming). You pay once to cache it, then only pay for the new content on each request. Can save 30-50% on input costs for apps with long system prompts. But don't cache unique content — that defeats the purpose.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Is it worth fine-tuning a model to reduce costs?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Only at serious scale. Fine-tuning can reduce the tokens needed per request (because the model "knows" your domain better), but the upfront cost and ongoing maintenance usually only makes sense above $5K-10K/month in API spend. For most startups, smart prompting + model selection + batch API gets you 90% of the savings with 1% of the effort.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category">
+            <h2>Choosing Providers</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Should I stick to one provider or use multiple?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Most teams start with one (usually OpenAI) for simplicity, then branch out as they scale. Using multiple providers gives you pricing leverage, redundancy if one goes down, and the ability to pick the best model for each task. But it adds complexity — you need abstraction layers, separate API keys, different SDKs. My advice: start with one, switch or add a second only when you have a clear cost or capability reason.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Does Anthropic's Claude offer better value than OpenAI?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Depends on your use case. Claude 4.6 Sonnet is $3 input / $15 output vs GPT-5.4's $2.50 / $15 — so slightly more expensive on input, same on output. But Claude excels at long-context tasks (200K+ tokens) and tends to follow instructions more precisely, which can reduce retry loops. For creative writing and analysis, many developers prefer Claude. For structured output and function calling, GPT-5 is often easier. Test both and measure which one gets you the result faster.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>What about local/open-source models to avoid API costs?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Running Llama 3 or Mistral locally can be free (just hardware costs), but you need GPUs, devops expertise, and time. For small teams, cloud APIs are almost always cheaper when you factor in engineering time and infrastructure. If you're doing millions of requests per month and have ML engineers on staff, self-hosting makes sense. Otherwise, stick with APIs. The math flips around $10K-20K/month in API spend.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category">
+            <h2>Billing & Limits</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>How do I avoid surprise bills?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Set hard billing limits in your provider dashboard. OpenAI, Anthropic, and Google all let you cap monthly spend. Set it to 2x what you expect to use, and set up email alerts at 50%, 75%, and 90% of that limit. Also monitor your usage daily for the first month after launch — costs can spike unexpectedly if a user finds a way to abuse your API or if your prompts are way longer than expected.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Do AI providers charge for failed requests?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    No. If a request fails with an error (rate limit, server error, invalid input), you're not charged. You only pay for successful completions. That said, if your code is retrying failed requests in a loop without proper backoff logic, you can rack up costs from repeated attempts. Always implement exponential backoff and max retry limits.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+                    <h3>Can I get volume discounts from providers?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, but you need to be spending serious money. OpenAI and Anthropic offer custom enterprise pricing once you're consistently above $5K-10K/month. Below that, you're stuck with published rates. If you're spending $20K+/month, definitely reach out to their enterprise sales teams — you can usually negotiate 10-30% off. Google is reportedly more flexible on pricing than others.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-f"><span class="logo-dot"></span> AICostHub</a>
+                <p>Transparent AI cost analysis for developers, founders, and enterprise teams.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Tools</h5>
+                <a href="index.html">Cost Calculator</a>
+                <a href="articles.html">Articles</a>
+            </div>
+            <div class="footer-col">
+                <h5>Resources</h5>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h5>Company</h5>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h5>Legal</h5>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 AICostHub Analysis Tool</span>
+            <span>For informational purposes only</span>
+        </div>
+    </footer>
+
+</body>
+</html>
